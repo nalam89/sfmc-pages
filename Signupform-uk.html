@@ -166,7 +166,22 @@ input[type=text] {
 </head>
 <body class="body">
 <script type="text/javascript"> 
+function validateForm() { 
+              var femail=document.getElementById("emailAddress").value; 
+              submitOK="true"; 
 
+              if (femail.length<1) { 
+                     Valert = Valert + "Please Enter your Email Address \n"; 
+                     submitOK="false"; 
+              } 
+              if (submitOK=="false") {
+                alert(Valert);
+                event.preventDefault();
+                event.stopImmediatePropagation();
+                return false; 
+              }
+       } 
+</script>
 
 </script>
 

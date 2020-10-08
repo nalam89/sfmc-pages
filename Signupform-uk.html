@@ -7,14 +7,9 @@ SET @email = requestparameter('emailAddress')
 SET @firstName = requestparameter('firstName')
 SET @lastName = requestparameter('lastName')
 SET @uniqueKey = Base64Encode(@email)
-
-/*UpsertData('Newsletter_form_website',1,
-            'uniqueKey',        @uniqueKey,
-            'Email Address',    @email,
-            'First Name',       @firstName,
-            'Last Name',        @lastName,
-            )*/
-ENDIF]%%
+]%%
+Submitted Successfully!!!
+%%[ENDIF]%%
 <!DOCTYPE html>
 <html lang="en" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -167,7 +162,7 @@ input[type=text] {
 <body class="body">
 <script type="text/javascript"> 
 function validateForm() { 
-              var femail=document.getElementById("emailAddress").value; 
+              var femail=document.getElementByName("emailAddress").value; 
               submitOK="true"; 
 
               if (femail.length<1) { 

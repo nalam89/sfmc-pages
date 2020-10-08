@@ -162,7 +162,7 @@ input[type=text] {
 <body class="body">
 <script type="text/javascript"> 
 function validateForm() { 
-  window.alert("Validate");
+  alert("TEST");
 
        } 
 </script>
@@ -174,7 +174,7 @@ function validateForm() {
 <input type="text" name="firstName" placeholder="First Name">
 <input type="text" name="lastName" placeholder="Last Name">
 <input type="email" name="emailAddress" placeholder="Email address">
-<button type="submit" name="button" onclick="validateForm()">Sign up now</button>
+<button type="submit" name="button" onsubmit="return validateForm()">Sign up now</button>
 <div style="line-height: 100%;" Class="Privacy_text"> <p style="font-size: 12px;color:#979797;">
   Read our <a href="https://www.hollandandbarrett.com/info/privacy-cookie-policy/" style="text-decoration:underline;color:#979797;">privacy policy</a></p></div>
 </form>

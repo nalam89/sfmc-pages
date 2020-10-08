@@ -164,7 +164,7 @@ input[type=text] {
 <div class="wrapper">
   Github Pages
 %%[IF EMPTY(@email) then]%%
-<form>
+<form name="uk_signup">
 <input type="text" name="firstName" id="firstName" placeholder="First Name">
 <input type="text" name="lastName" id="lastName" placeholder="Last Name">
 <input type="email" name="emailAddress" id="emailAddress" placeholder="Email address">
@@ -179,10 +179,39 @@ input[type=text] {
 </div>
 
 
-<script type="text/javascript"> 
+<script type="text/javascript">
+
+function ValidateEmail(inputText)
+{
+var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+if(inputText.value.match(mailformat))
+{
+alert("Valid email address!");
+document.uk_signup.emailAddress.focus();
+return true;
+}
+else
+{
+alert("You have entered an invalid email address!");
+document.uk_signup.emailAddress.focus();
+return false;
+}
+}
+
 function validate() { 
-  var emailAddress = document.getElementById("emailAddress").value;
-  alert('TEST SUBMIT'+ emailAddress);
+  var f_emailAddress = document.getElementById("emailAddress").value;
+  submitOK="true";
+  if ValidateEmail(f_emailAddress) == false { 
+                     Valert = Valert + "Please Enter a valid Email Address \n"; 
+                     submitOK="false"; 
+              } 
+  
+                if (submitOK=="false") {
+                event.preventDefault();
+                event.stopImmediatePropagation();
+                return false; 
+              }
+              return true;
  } 
 </script>
 </body>

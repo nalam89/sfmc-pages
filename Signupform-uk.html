@@ -184,7 +184,7 @@ input[type=text] {
 function ValidateEmail(inputText)
 {
 var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-if(inputText.match(mailformat))
+if(inputText.value.match(mailformat))
 {
 alert("Valid email address!");
 document.uk_signup.emailAddress.focus();
@@ -201,7 +201,7 @@ return false;
 function validate() { 
   var f_emailAddress = document.getElementById("emailAddress").value;
   submitOK="true";
-  if ValidateEmail(f_emailAddress) == false { 
+  if (ValidateEmail(f_emailAddress)) == false { 
                      Valert = Valert + "Please Enter a valid Email Address \n"; 
                      submitOK="false"; 
               } 

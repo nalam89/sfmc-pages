@@ -1,0 +1,1590 @@
+<!DOCTYPE html><script runat=server> Platform.Load("Core", "1.1");
+  try {
+</script>%%[ set @newsletter = QueryParameter('newsletter') ]%%
+<html  lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class="no-js">
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script>document.documentElement.className = 'theme-js';</script>
+    <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"c29e8be9ec",applicationID:"175055876"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(9),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!P++){var t=M.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+M.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+M.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,y="addEventListener",h="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1215.min.js"},T=w&&b&&b[y]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:T,userAgent:s,disabled:E};if(!E){t(1),t(7),g[y]?(g[y]("DOMContentLoaded",o,l(!1)),m[y]("load",r,l(!1))):(g[h]("onreadystatechange",i),m[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var P=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<style>.async-hide { opacity: 0 !important}</style>
+<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;})(window,document.documentElement,'async-hide','dataLayer',4000,{'GTM-NZNHVNT':true});</script>
+<script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-1364797-30", {"cookieDomain":"auto","allowLinker":true});ga("set", "anonymizeIp", true);ga('require', 'GTM-NZNHVNT');</script>
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script>window.dataLayer = window.dataLayer || []; window.dataLayer.push({"drupalLanguage":"en","drupalCountry":"GB","siteName":"Sa\u00efd Business School","entityUid":"41","entityType":"node","entityBundle":"homepage","entityId":"7421","entityTitle":"%%=IIF(empty(@newsletter), 'Communications', 'Newsletters')=%% Preference Centre","userUid":0});</script>
+<link rel="canonical" href="https://www.sbs.ox.ac.uk/" />
+<link rel="shortlink" href="https://www.sbs.ox.ac.uk/" />
+<link rel="image_src" href="https://www.sbs.ox.ac.uk/sites/default/files/homepage_hero.jpg" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+<meta name="description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.sbs.ox.ac.uk" />
+<meta property="og:title" content="%%=IIF(empty(@newsletter), 'Communications', 'Newsletters')=%% Preference Centre | Saïd Business School" />
+<meta property="og:image" content="https://www.sbs.ox.ac.uk/sites/default/files/homepage_hero.jpg" />
+<meta property="og:image:url" content="https://www.sbs.ox.ac.uk/sites/default/files/homepage_hero.jpg" />
+<meta property="og:image:secure_url" content="https://www.sbs.ox.ac.uk/sites/default/files/homepage_hero.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://www.sbs.ox.ac.uk/sites/default/files/homepage_hero.jpg" />
+<style>div#sliding-popup, div#sliding-popup .eu-cookie-withdraw-banner, .eu-cookie-withdraw-tab {background: #ffffff} div#sliding-popup.eu-cookie-withdraw-wrapper { background: transparent; } #sliding-popup h1, #sliding-popup h2, #sliding-popup h3, #sliding-popup p, #sliding-popup label, #sliding-popup div, .eu-cookie-compliance-more-button, .eu-cookie-compliance-secondary-button, .eu-cookie-withdraw-tab { color: #000000;} .eu-cookie-withdraw-tab { border-color: #000000;}</style>
+<meta name="msapplication-TileColor" content="#002147" />
+<meta name="theme-color" content="#002147" />
+<link rel="shortcut icon" href="https://www.sbs.ox.ac.uk/themes/custom/said/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="apple-touch-icon" href="https://www.sbs.ox.ac.uk/themes/custom/said/favicons/apple-touch-icon.png" type="image/png" sizes="180x180" />
+<link rel="icon" href="https://www.sbs.ox.ac.uk/themes/custom/said/favicons/favicon-32x32.png" type="image/png" sizes="32x32" />
+<link rel="icon" href="https://www.sbs.ox.ac.uk/themes/custom/said/favicons/favicon-16x16.png" type="image/png" sizes="16x16" />
+<link rel="manifest" href="https://www.sbs.ox.ac.uk/themes/custom/said/favicons/site.webmanifest" />
+<link rel="mask-icon" href="https://www.sbs.ox.ac.uk/themes/custom/said/favicons/safari-pinned-tab.svg" color="#002147" />
+<link rel="revision" href="https://www.sbs.ox.ac.uk/homepage/leadership" />
+<script src="https://www.sbs.ox.ac.uk/sites/default/files/google_tag/google_tag_manager/google_tag.script.js?r82cov" defer></script>
+<script src="https://cloud.education.sbs.ox.ac.uk/jquery"></script>
+<script src="https://cloud.education.sbs.ox.ac.uk/subscription-centre-js"></script>
+          <title>%%=IIF(empty(@newsletter), 'Communications', 'Newsletters')=%% Preference Centre | Saïd Business School</title>
+        <link rel="stylesheet" media="all" href="https://sbs.ox.ac.uk/sites/default/files/css/css_zlW9PPlXVvEK8tpNHPI_-iI97f-qAI0pLm-swnqW9WY.css" />
+<link rel="stylesheet" media="all" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700,300i,400i,500i,700i" />
+<link rel="stylesheet" media="all" href="https://cloud.education.sbs.ox.ac.uk/subscription-styles" />
+<link rel="stylesheet" media="all" href="https://cloud.education.sbs.ox.ac.uk/sc-css-2" />
+ 
+%%[
+
+ set @configData = LookupOrderedRows("SubscriptionCentreConfiguration", 1, "ID desc", "InUse", 1)
+ if RowCount(@configData) > 0 then
+    set @heroImage = Field(Row(@configData, 1), "HeroImageURL")
+    set @heroVideo = Field(Row(@configData, 1), "HeroVideoURL")
+    set @heroImageDescr = Field(Row(@configData, 1), "HeroImageALT")
+    if Substring(@heroImage, 1, 21) == "https://sbs.ox.ac.uk/" then
+       set @heroImageURL = @heroImage
+    elseif Substring(@heroImage, 1, 2) == "//" then
+       set @heroImageURL = Concat("https://sbs.ox.ac.uk", Substring(@heroImage, 2))
+    elseif Substring(@heroImage, 1, 1) == "/" then
+       set @heroImageURL = Concat("https://sbs.ox.ac.uk", @heroImage)
+    else
+       set @heroImageURL = Concat("https://sbs.ox.ac.uk/", @heroImage)
+    endif
+    
+    if Substring(@heroVideo, 1, 21) == "https://sbs.ox.ac.uk/" then
+       set @heroVideoURL = @heroVideo
+    elseif Substring(@heroVideo, 1, 2) == "//" then
+       set @heroVideoURL = Concat("https://sbs.ox.ac.uk", Substring(@heroVideo, 2))
+    elseif Substring(@heroVideo, 1, 1) == "/" then
+       set @heroVideoURL = Concat("https://sbs.ox.ac.uk", @heroVideo)
+    else
+       set @heroVideoURL = Concat("https://sbs.ox.ac.uk/", @heroVideo)
+    endif
+   
+    if Substring(@heroVideo, Subtract(Length(@heroVideo), 3), 1) == "." then
+       set @heroVideoType = Substring(@heroVideo, Subtract(Length(@heroVideo), 2))
+    elseif Substring(@heroVideo, Subtract(Length(@heroVideo), 4), 1) == "." then
+       set @heroVideoType = Substring(@heroVideo, Subtract(Length(@heroVideo), 3))
+    elseif Substring(@heroVideo, Subtract(Length(@heroVideo), 5), 1) == "." then
+       set @heroVideoType = Substring(@heroVideo, Subtract(Length(@heroVideo), 4))
+    else
+       set @heroVideoType = "mp4"
+    endif
+    
+ else
+    set @heroImageURL = "https://sbs.ox.ac.uk/sites/default/files/styles/hero/public/homepage_hero.jpg"
+    set @heroImageDescr = "Saïd building at night"
+    set @heroVideoURL = "https://sbs.ox.ac.uk/sites/default/files/videos/2020-10/brand-19_2.mp4"
+    set @heroVideoType = "mp4"
+ endif
+]%%
+<link rel="preload" href="%%=v(@heroImageURL)=%%" as="image" media="(max-width: 1800px)" />
+<link rel="preload" href="%%=v(@heroVideoURL)=%%" as="video" type="video/%%=v(@heroVideoType)=%%" />
+<script runat=server> } catch(e) {} </script>
+</head>
+  <body class="path-frontpage page-node-type-homepage has-glyphicons">
+  
+    
+    <div class="freeze-element-global" id="freeze"></div>
+    <div class="wrapper">
+            <div class="gallery-overlay" role="dialog"></div>
+            <svg xmlns="https://www.w3.org/2000/svg" style="display: none;" id="site-icons">
+                <symbol id="plus" viewBox="0 0 13 13">
+          <path d="M1 6.5h11"></path>
+          <path d="M6.5 1v11"></path>
+        </symbol>
+                <symbol id="quote--closing" viewBox="0 0 282 241">
+          <path d="M139.337 69.932C135.974 29.577 102.964-1.83 61.61 1.202 22.522 4.069-2.54 34.432.988 74.579c3.285 37.346 34.122 58.361 71.058 57.21-1.352 29.702-30.43 81.214-69.44 102.888-1.115.623-1.384 2.115-.708 3.199a2.425 2.425 0 0 0 2.882.975c99.93-36.948 140.154-101.757 134.557-168.918"></path>
+          <path d="M279.337 69.932c-3.363-40.355-36.373-71.763-77.727-68.73-39.088 2.866-64.151 33.229-60.622 73.376 3.285 37.346 34.122 58.361 71.058 57.21-1.352 29.702-30.43 81.214-69.44 102.888-1.115.623-1.384 2.115-.708 3.199a2.425 2.425 0 0 0 2.882.975c99.93-36.948 140.154-101.757 134.557-168.918"></path>
+        </symbol>
+                <symbol id="colon-right" viewBox="0 0 294 194">
+          <path d="M351.057 191.772c-52.255 0-94.612-42.326-94.612-94.531 0-52.21 42.357-94.537 94.612-94.537 52.256 0 94.613 42.326 94.613 94.537 0 52.21-42.357 94.531-94.613 94.531M97.564 191.772c-52.26 0-94.613-42.326-94.613-94.531 0-52.21 42.358-94.537 94.613-94.537s94.608 42.326 94.608 94.537c0 52.21-42.358 94.531-94.608 94.531"></path>
+        </symbol>
+                <symbol id="colon--vertical" viewBox="0 0 204 486">
+          <path d="M201 101c0 54.1-44.3 98-99 98S3 155.1 3 101 47.3 3 102 3s99 43.9 99 98"></path>
+          <path d="M201 384.6c0 54.1-44.3 98-99 98s-99-43.9-99-98 44.3-98 99-98 99 43.9 99 98"></path>
+        </symbol>
+                <symbol id="colon--horizontal" viewBox="0 0 457 201">
+          <path d="M100.5 1c55 0 99.5 44.6 99.5 99.5S155.5 200 100.5 200 1 155.4 1 100.5 45.6 1 100.5 1"></path>
+          <path d="M391.5 1c55 0 99.5 44.6 99.5 99.5S446.5 200 391.5 200 292 155.4 292 100.5 336.5 1 391.5 1"></path>
+        </symbol>
+                <symbol id="chevron" viewBox="0 0 20 38">
+          <path d="M1 19L19 1"></path>
+          <path d="M1 19l18 18"></path>
+        </symbol>
+                <symbol id="semicolon" viewBox="0 0 220 684">
+          <path d="M217.21 419.17c-5.22-62.743-56.452-111.571-120.621-106.855-60.66 4.454-99.554 51.657-94.077 114.071 5.098 58.06 52.947 90.73 110.271 88.94-2.098 46.175-47.222 126.257-107.76 159.951-1.736.969-2.148 3.289-1.099 4.974a3.756 3.756 0 0 0 4.472 1.516c155.07-57.441 217.498-158.19 208.813-262.598M216 109c0 59.097-47.684 107-106.497 107C50.683 216 3 168.097 3 109S50.684 2 109.503 2 216 49.903 216 109"></path>
+        </symbol>
+                <symbol id="bracket" viewBox="0 0 155 448">
+          <path d="M152.428 222.142c-43.14-4.475-49.388-32.128-49.388-73.267 0-21.443.492-49.294.492-70.985 0-62.11-37.07-76.561-100.268-76.89A2.254 2.254 0 0 0 1 3.245v.991c0 1.152.887 2.098 2.03 2.22 44.743 4.77 50.964 39.025 50.964 80.31 0 17.745-.988 38.448-.988 55.207 0 48.556 12.571 71.477 63.59 80.594v.019c.335.075.594.36.594.721a.745.745 0 0 1-.595.722v.016c-50.774 9.86-63.59 31.795-63.59 80.843 0 16.761.99 39.682.99 57.181 0 41.298-5.03 75.561-50.959 80.314C1.89 442.5 1 443.449 1 444.603a2.257 2.257 0 0 0 2.266 2.246c63.435-.336 100.266-15.022 100.266-76.892 0-21.443-.492-49.292-.492-70.985 0-41.137 6.251-68.793 49.388-73.265.917-.097 1.63-.86 1.63-1.784 0-.921-.71-1.687-1.63-1.781"></path>
+        </symbol>
+      </svg>
+      <a href="#main-content" class="visually-hidden focusable skip-link">
+        Skip to main content
+      </a>
+      <noscript aria-hidden="true"><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TFK5TH5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+        
+        
+
+                    
+    <header  class="header header--overlaid" role="banner">
+            <div class="navbar-brand">
+        <a href="https://sbs.ox.ac.uk/" class="navbar-brand__link">
+                    <svg xmlns="https://www.w3.org/2000/svg" class="icon icon--logo icon--logo--oxford" viewBox="0 0 104 104">
+  <title>%%=IIF(empty(@newsletter), 'Communications', 'Newsletters')=%% Preference Centre | Saïd Business School</title>
+  <path fill="#002147" d="M0 0h104v104H0z"></path><g fill="#fff"><path d="M22.8 86.44a6.79 6.79 0 0 1-6.94 6.89 6.82 6.82 0 1 1 0-13.64 6.74 6.74 0 0 1 6.94 6.75zm-2.21.07c0-3.62-1.76-6.16-4.73-6.16-3.23 0-4.73 3-4.73 6.16 0 3.63 1.76 6.16 4.73 6.16 3.23 0 4.73-3 4.73-6.16zM65.11 86.44a6.93 6.93 0 1 1-6.93-6.75 6.78 6.78 0 0 1 6.93 6.75zm-2.19.07c0-3.62-1.76-6.16-4.74-6.16-3.22 0-4.72 3-4.72 6.16 0 3.63 1.75 6.16 4.72 6.16 3.23 0 4.74-3 4.74-6.16zM70.47 86.59h1.65c2.5 0 3-1.58 3-3.08a2.83 2.83 0 0 0-1.69-2.72 4.94 4.94 0 0 0-2-.26h-1v6.06zm3 2.12c-.78-1.1-1.07-1.5-2-1.5h-1v4.47c0 .37.15.55.56.62l1.5.33v.48h-5.91v-.48L68 92.3c.4-.11.55-.25.55-.62V81.34c0-.37-.15-.51-.55-.62l-1.36-.33v-.48h5.76a8.06 8.06 0 0 1 2.75.37 3.47 3.47 0 0 1 2.23 3.18c0 1.62-1.2 3-3.22 3.46V87c.4.18.63.44 2.06 2.31L78 91.68a1.54 1.54 0 0 0 1 .66l1.33.29v.48h-3.18c-.37 0-.56-.11-.88-.55l-2.75-3.85zM47.66 84.42h.55v4.4h-.55l-.33-1.32a.76.76 0 0 0-.85-.65h-3.19v4.83c0 .37.15.55.55.62l1.51.33v.48h-5.91v-.48l1.36-.33c.4-.11.55-.25.55-.62V81.34c0-.37-.15-.51-.55-.62l-1.36-.33v-.48h10v3.31h-.55l-.63-2c-.14-.51-.36-.7-.8-.7h-4.17v5.69h3.19a.8.8 0 0 0 .85-.66l.33-1.14zM81.36 93.11v-.48l1.36-.33c.41-.11.55-.25.55-.62V81.34c0-.37-.14-.51-.55-.62l-1.36-.33v-.48h6.2a9.4 9.4 0 0 1 3.89.66 6.42 6.42 0 0 1 3.63 6A6.07 6.07 0 0 1 92 92.3a9.2 9.2 0 0 1-4.33.81zm3.86-12.58V91.9c0 .47.11.59.58.59h1.62a5.88 5.88 0 0 0 3.48-.81c1.36-1 2-2.79 2-5.06s-.62-4.43-2.46-5.5a6.55 6.55 0 0 0-3.3-.59zM28 92.63v.48h-4.69v-.48l1.17-.29a1.79 1.79 0 0 0 1-.59l4-5-4-5.36a1.61 1.61 0 0 0-1-.66l-1.11-.29v-.48h5.8v.48l-1.17.2c-.44.08-.33.26-.11.55l3 4.26h.08L34 81.19c.21-.29.29-.4-.12-.51l-1.17-.29v-.48h4.66v.48l-1.18.29a1.85 1.85 0 0 0-1 .59l-3.81 4.8 4.25 5.61a1.65 1.65 0 0 0 1 .66l1.1.29v.48h-5.8v-.48l1.25-.26c.44-.07.37-.21.15-.51L30 87.31l-3.26 4.52c-.23.29-.3.4.1.51l1.17.29zM14.07 73.7a2.29 2.29 0 0 1-1.68.61 2.39 2.39 0 0 1-1.69-.63 2.65 2.65 0 0 1-.55-2.07v-3.67h.75v3.94a1.73 1.73 0 0 0 .37 1.37 1.61 1.61 0 0 0 1.16.41 1.52 1.52 0 0 0 1.06-.39c.43-.43.4-.89.4-2v-3.3h.74v3.11c0 1.15.05 2.01-.56 2.62zM20.72 74.19l-3-5.13v5.13H17v-6.25h.77l3 5.15v-5.15h.69v6.25zM24.1 74.19v-6.25h.76v6.25zM29.54 74.19h-.87l-2.15-6.25h.78l1.83 5.52L31 67.94h.73zM33.43 74.19v-6.25h3.41v.62h-2.67v2.06h2.5v.61h-2.5v2.31h2.74v.65zM41.66 68.87a1.73 1.73 0 0 0-1.33-.34h-.69v2.34h.25a2.42 2.42 0 0 0 1.74-.39 1.22 1.22 0 0 0 0-1.61zm.69 5.32l-.72-1.62c-.45-1-.65-1.1-1.56-1.1h-.43v2.72h-.74v-6.25h1.35c.84 0 1.47 0 2 .48a1.72 1.72 0 0 1 .48 1.25 1.52 1.52 0 0 1-.38 1.08 1.73 1.73 0 0 1-1 .49.85.85 0 0 1 .52.25 2.88 2.88 0 0 1 .47.84l.83 1.86zM50.44 74.19v-6.25h.75v6.25zM55.48 68.56v5.63h-.75v-5.63h-1.85v-.62h4.46v.62zM60.94 71.72v2.47h-.74v-2.47l-2-3.78h.86l1.55 2.93 1.49-2.93h.81zM69.94 68.46c-1.22 0-2 1-2 2.59s.88 2.61 2.06 2.61 2-1.11 2-2.66-.84-2.54-2.06-2.54zm0 5.85a2.93 2.93 0 0 1-2.81-3.22c0-1.93 1.17-3.27 2.86-3.27s2.8 1.32 2.8 3.21-1.15 3.28-2.79 3.28zM75.6 68.56v2.06H78v.61h-2.4v3h-.75v-6.29h3.32v.62zM44.65 69.46a1.7 1.7 0 0 1 1.9-1.64 2.37 2.37 0 0 1 1.75.65l-.37.44a2.2 2.2 0 0 0-1.32-.48c-.81 0-1.25.42-1.25 1a.8.8 0 0 0 .29.63 3.55 3.55 0 0 0 .87.49 4.58 4.58 0 0 1 1.38.81 1.55 1.55 0 0 1 .47 1.13 1.81 1.81 0 0 1-2 1.83 2.82 2.82 0 0 1-1.87-.67l.34-.51a3 3 0 0 0 1.51.54c.94 0 1.29-.51 1.29-1.13a1 1 0 0 0-.33-.71 4.23 4.23 0 0 0-1.15-.66 3.54 3.54 0 0 1-1.16-.7 1.42 1.42 0 0 1-.35-1.02z"></path></g><path d="M73.38 25.63a1.93 1.93 0 0 0-.84-1.76 2.91 2.91 0 0 0-1.45-.28h-4.38v8.84h4.76c1.11 0 1.75.25 1.81 1.23h.11zM74 25.63a1.93 1.93 0 0 1 .84-1.76 3 3 0 0 1 1.45-.28h4.41v8.84h-4.8c-1.1 0-1.74.25-1.8 1.23H74z" fill="#fff"></path><path d="M81.61 24.25v9.34h-6.77l-.07.19c-.12.29-.34.57-1.07.57s-1-.28-1.07-.57l-.08-.19h-6.76v-9.34h-.61v.28l-.59-.18a.56.56 0 0 0-.53-.4.57.57 0 0 0-.56.56.56.56 0 0 0 .56.55.58.58 0 0 0 .36-.12l.76.23v.75l-.58-.11a.56.56 0 1 0-.51.79.58.58 0 0 0 .4-.18l.69.12v.77h-.61a.54.54 0 0 0-.47-.31.56.56 0 1 0 .45.88h.63v.84h-.61a.58.58 0 0 0-.46-.23.56.56 0 1 0 .47.85h.6v.76l-.67.12a.58.58 0 0 0-.41-.18.56.56 0 1 0 0 1.11.55.55 0 0 0 .51-.33l.57-.1v.76l-.74.22a.54.54 0 0 0-.35-.13.56.56 0 0 0 0 1.12.57.57 0 0 0 .53-.41l.56-.17v.73l-.82.35a.59.59 0 0 0-.3-.09.57.57 0 0 0-.56.56.56.56 0 0 0 1.11.1l.57-.25v.67h7a1.62 1.62 0 0 0 1.52.82 1.6 1.6 0 0 0 1.52-.75h7v-10z" fill="#fff"></path><g fill="#fff"><path d="M69.09 21.13c-1.41 0-2.55.22-2.55.49s1.14.49 2.55.49 2.56-.22 2.56-.49-1.14-.49-2.56-.49zM72.62 18.07l-1.48 1v.11l.35.16c.07 0 .07.09 0 .12l-.93.78h-.06l-.66-1v-.14l.44-.07V19l-1.14-1.61H69L67.85 19v.12l.45.07c.07 0 .09.08 0 .14l-.66 1h-.04l-.87-.78v-.12l.35-.16v-.11l-1.53-1h-.13l.91 2.76a8.26 8.26 0 0 1 2.74-.35 8.38 8.38 0 0 1 2.75.35l.9-2.76z"></path></g><g fill="#fff"><path d="M73.68 39.65c-1.41 0-2.55.21-2.55.48s1.14.49 2.55.49 2.56-.22 2.56-.49-1.14-.48-2.56-.48zM77.21 36.58l-1.48 1v.11l.35.16c.07 0 .07.08 0 .12l-.92.79h-.09l-.66-1c-.05-.06 0-.13 0-.14l.44-.07v-.12l-1.14-1.61h-.19l-1.15 1.61v.12l.45.07c.07 0 .09.08 0 .14l-.66 1h-.09l-.75-.76v-.12l.35-.16v-.11l-1.54-1H70l.91 2.77a10.65 10.65 0 0 1 5.49 0l.9-2.77z"></path></g><g fill="#fff"><path d="M78.27 21.13c-1.42 0-2.57.22-2.57.49s1.15.49 2.57.49 2.56-.22 2.56-.49-1.15-.49-2.56-.49zM81.79 18.07l-1.48 1v.11l.35.16c.07 0 .07.09 0 .12l-.93.78h-.08l-.67-1c-.05-.06 0-.13 0-.14l.44-.07V19l-1.14-1.61h-.19L77 19v.12l.45.07c.07 0 .09.08 0 .14l-.65 1h-.09l-.87-.79v-.12l.35-.15v-.17l-1.54-1h-.13l.91 2.76a10.94 10.94 0 0 1 5.49 0l.91-2.76z"></path></g><g fill="#002147"><path d="M67.84 25a.78.78 0 0 1 .57.18.53.53 0 0 1 .17.4c0 .48-.37.69-.82.69h-.5v-.08c.14 0 .15 0 .15-.23v-.64c0-.21 0-.23-.14-.24V25zm-.09 1c0 .18 0 .21.13.21s.34-.18.34-.53-.21-.54-.38-.54h-.08c-.01 0 0 0 0 .1zM70.06 25.61a.64.64 0 0 1-.66.68.63.63 0 0 1-.66-.64.66.66 0 0 1 .68-.68.62.62 0 0 1 .64.64zm-1 0c0 .35.13.61.32.61s.26-.16.26-.51-.14-.61-.3-.61-.23.14-.23.48zM71.78 25v.08c-.15 0-.16 0-.15.23v.65c0 .22 0 .22.15.23v.08h-.62v-.08c.15 0 .16 0 .16-.23v-.69l-.37 1h-.11l-.36-.91v.43a1.71 1.71 0 0 0 0 .33c0 .07 0 .09.18.09v.08h-.48v-.08c.09 0 .13 0 .14-.09s0-.17 0-.35v-.38c0-.25 0-.28-.15-.29V25h.45l.35.78.3-.78zM72.41 26c0 .21 0 .22.15.23v.08h-.63v-.08c.13 0 .15 0 .15-.23v-.64c0-.21 0-.23-.15-.24V25h.63v.08c-.14 0-.15 0-.15.24z"></path></g><g fill="#002147"><path d="M69.27 28.61h-.17l-.72-.92v.74c0 .07.07.09.2.09v.08h-.48v-.08c.08 0 .14 0 .15-.09s0-.17 0-.37v-.37-.22c0-.05-.08 0-.15-.06v-.08h.43l.65.81v-.26-.37c0-.06-.07-.09-.19-.1v-.08h.49v.08c-.09 0-.14 0-.15.1a2.41 2.41 0 0 0 0 .37z"></path><path d="M70.06 28.61l-.38-1c-.07-.17-.11-.18-.21-.19v-.08h.64v.08H70c-.07 0-.07 0-.05.09s.19.49.26.69c.06-.17.18-.54.21-.63s0-.14-.06-.15h-.05v-.08h.47v.08c-.12 0-.14 0-.21.2 0 0-.25.61-.4 1zM70.94 28.2c0 .11.15.33.35.33a.18.18 0 0 0 .18-.19c0-.12-.08-.18-.2-.24-.16-.07-.34-.18-.34-.39s.16-.4.47-.4a1.13 1.13 0 0 1 .18 0h.1a2.51 2.51 0 0 0 0 .3h-.08c0-.12-.11-.26-.26-.26a.16.16 0 0 0-.17.17c0 .09.08.15.2.2.18.08.34.18.34.4s-.2.42-.5.42a1.05 1.05 0 0 1-.21 0l-.12-.05-.07-.33z"></path></g><g fill="#002147"><path d="M68.41 30.63c0 .21 0 .22.14.24v.07h-.63v-.07c.14 0 .15 0 .15-.24V30c0-.22 0-.23-.15-.24v-.08h.63v.08c-.13 0-.14 0-.14.24zM69.17 30.65v.17a.3.3 0 0 0 .14 0 .26.26 0 0 0 .19-.06.56.56 0 0 0 .09-.19h.09c0 .07-.06.27-.07.33h-1v-.07c.15 0 .16 0 .16-.24V30c0-.22 0-.23-.14-.24v-.08h.63v.08c-.14 0-.16 0-.16.24zM70.26 30.65v.17a.28.28 0 0 0 .14 0 .27.27 0 0 0 .19-.06.56.56 0 0 0 .09-.19h.08a3.2 3.2 0 0 1-.07.33h-1v-.07c.14 0 .16 0 .16-.24V30c0-.22 0-.23-.14-.24v-.08h.63v.08c-.14 0-.16 0-.16.24zM71.2 31c-.14-.34-.32-.83-.39-1s-.11-.18-.2-.19v-.08h.63v.08h-.07c-.07 0-.07 0 0 .09s.18.5.26.68c0-.16.18-.53.21-.62s0-.15-.06-.15h-.06v-.08H72v.08c-.11 0-.13 0-.21.2s-.25.61-.39 1z"></path></g><g fill="#002147"><path d="M76.43 25v.08c-.15 0-.16 0-.15.23v.65c0 .22 0 .22.15.23v.08h-.61v-.08c.15 0 .15 0 .15-.23v-.69l-.38 1h-.1l-.36-.91v.43a1 1 0 0 0 0 .33c0 .07 0 .09.17.09v.08h-.48v-.08c.09 0 .13 0 .14-.09s0-.17 0-.35v-.38c0-.25 0-.28-.16-.29V25h.46l.34.78.4-.78zM77.07 26c0 .21 0 .22.14.23v.08h-.63v-.08c.14 0 .15 0 .15-.23v-.64c0-.21 0-.23-.15-.24V25h.63v.08c-.13 0-.14 0-.14.24zM78.51 26.28h-.16l-.72-.92v.36a2.41 2.41 0 0 0 0 .37c0 .06.06.09.19.09v.08h-.48v-.08c.08 0 .13 0 .14-.09a3.05 3.05 0 0 0 0-.37v-.36-.23a.18.18 0 0 0-.15-.06V25h.44l.64.82v-.27a2.41 2.41 0 0 0 0-.37c0-.07-.06-.1-.19-.1V25h.5v.08c-.1 0-.15 0-.16.1a2.41 2.41 0 0 0 0 .37zM79.32 26.18h.07c.07 0 .07 0 0-.1l-.07-.2H79l-.06.19c0 .08 0 .1.06.11h.06v.08h-.45v-.08c.1 0 .13 0 .19-.18l.39-1h.14l.12.36.25.66c.06.18.1.18.19.19v.08h-.62zm-.24-.42h.25l-.12-.37z"></path></g><g fill="#002147"><path d="M76.42 28.29c0 .21 0 .22.17.23v.08h-.68v-.08c.16 0 .18 0 .18-.23v-.86c-.13 0-.18 0-.21.07s0 .08-.08.18h-.08v-.39h1.1v.39h-.09a.49.49 0 0 0-.08-.2.29.29 0 0 0-.19-.05zM77.43 28.29c0 .21 0 .22.16.23v.08H77v-.08c.14 0 .15 0 .15-.23v-.64c0-.22 0-.23-.15-.24v-.08h.64v.08c-.14 0-.16 0-.16.24zM79.06 28a.64.64 0 0 1-.66.68.62.62 0 0 1-.65-.64.66.66 0 0 1 .68-.69.63.63 0 0 1 .63.65zm-1 0c0 .35.13.61.32.61s.26-.16.26-.51-.14-.61-.31-.61-.22.09-.22.43z"></path></g><g fill="#002147"><path d="M77 29.67v.08c-.15 0-.16 0-.15.23v.65c0 .22 0 .22.15.24v.07h-.6v-.07c.14 0 .15 0 .15-.24v-.69l-.38 1h-.11L75.7 30v.43a2.65 2.65 0 0 0 0 .33c0 .07 0 .08.17.1v.07h-.48v-.07c.09 0 .13 0 .15-.1s0-.17 0-.35v-.39c0-.25 0-.27-.16-.28v-.08h.46l.33.77.31-.77zM77.29 30c0-.22 0-.23-.14-.24v-.08h.92v.33H78a.5.5 0 0 0-.07-.19.35.35 0 0 0-.19 0c-.07 0-.08 0-.08.07v.38h.1c.17 0 .18 0 .19-.16H78v.46h-.09c0-.17 0-.19-.19-.19h-.1v.49a.28.28 0 0 0 .14 0 .25.25 0 0 0 .2-.06.53.53 0 0 0 .1-.2h.09a2.39 2.39 0 0 1-.07.35h-1v-.07c.15 0 .16 0 .16-.24zM78.88 30.87h.05c.08 0 .08 0 0-.09l-.07-.2h-.32v.18c0 .09 0 .11.06.11h.05v.07h-.45v-.07c.1 0 .12 0 .19-.19l.39-1h.13l.14.37c.08.24.17.46.24.66s.1.18.19.2v.07h-.6zm-.26-.43h.26l-.13-.37z"></path></g><path d="M71.93 46.62a.51.51 0 0 1-.51.51.51.51 0 1 1 0-1 .51.51 0 0 1 .51.49zM77.09 47.47a.51.51 0 0 1-.51.51.52.52 0 1 1 .51-.51zM74.17 10.63a.51.51 0 1 1-.51-.5.5.5 0 0 1 .51.5zM86.31 15.4a.51.51 0 0 1-.54.49.5.5 0 0 1-.48-.53.5.5 0 0 1 .53-.48.5.5 0 0 1 .49.52zM60.74 37.28a1.51 1.51 0 0 1 .29.9c0 .36-.12.64-.76 1.08l-1.83 1.32-.35-.49L60 38.73c.32-.23.47-.4.47-.65a.88.88 0 0 0-.18-.51.73.73 0 0 0-.63-.35c-.19 0-.39.13-.76.38l-1.73 1.17-.33-.47 1.64-1.12a2.3 2.3 0 0 1 1.17-.54 1.36 1.36 0 0 1 1.09.64zM54.85 33.69l3.51-1.23.19.53-2 2.45 2.53-1 .18.51-3.46 1.33-.18-.53 2-2.45-2.57.91zM54.33 30.9l3.67-.54.09.58-3.67.54zM54.22 26.48v-.61l3.67 1.48v.61l-3.76 1.13v-.62l3-.86zM57.57 18.19c-.52 0-.77.31-1.1.91l-.44.78 3.27 1.77.28-.51-1.36-.74.08-.15c.23-.41.31-.48.89-.42l1.06.09.3-.55-1.22-.1a1.65 1.65 0 0 0-.59 0 .7.7 0 0 0-.17.09 1.2 1.2 0 0 0 0-.2.79.79 0 0 0-.05-.3.89.89 0 0 0-.46-.52 1 1 0 0 0-.49-.15zm-.66 1.13c.22-.4.37-.55.6-.55a.79.79 0 0 1 .3.08.57.57 0 0 1 .28.34.51.51 0 0 1 0 .17 1.53 1.53 0 0 1-.26.67l-.07.14-1-.56zM61.62 13l.47-.37 2.26 2.95-.48.36zM63.66 11.51l2.4-1.25.23.45-.93.49 1.47 2.8-.52.28-1.48-2.84-.94.49zM69.64 9.14l.63-.14-.51 2.48.41 1.41-.57.11-.39-1.4-1.77-1.82.61-.18 1.27 1.32zM81 14.21L82.83 11l1.77 1.05-.26.43-1.26-.74-.53.88 1.2.7-.25.43-1.19-.7-.85 1.44zM90.47 22.46l1.35-1.61.21.63-1 1.15 1.49.33.2.61-2-.5-1.45 1.74-.2-.63 1.1-1.27-1.65-.37-.2-.62zM89.41 26.1l3.69-.3.17 2h-.51l-.11-1.46-1 .09.11 1.37h-.5l-.11-1.37-1.67.13zM91 29.4a1.94 1.94 0 0 0-1.13.34 1.6 1.6 0 0 0-.66 1.33 1.88 1.88 0 0 0 2.06 1.75 1.84 1.84 0 0 0 1.12-.34 1.64 1.64 0 0 0 .66-1.34A1.88 1.88 0 0 0 91 29.4zm.29 2.82c-.72 0-1.56-.39-1.56-1.12a1 1 0 0 1 .42-.85A1.4 1.4 0 0 1 91 30a1.77 1.77 0 0 1 1.39.58 1 1 0 0 1-.24 1.42 1.42 1.42 0 0 1-.82.22zM88.89 17.07a2.24 2.24 0 0 0-1.16.36 1.93 1.93 0 0 0-1 1.57 1.67 1.67 0 0 0 .26.88 1.64 1.64 0 0 0 1.39.78 2.22 2.22 0 0 0 1.17-.38 1.93 1.93 0 0 0 1-1.56 1.64 1.64 0 0 0-.27-.88 1.59 1.59 0 0 0-1.39-.77zm-.57 3a.92.92 0 0 1-.84-.46 1 1 0 0 1-.16-.53 1.44 1.44 0 0 1 .75-1.16 1.78 1.78 0 0 1 .92-.3.93.93 0 0 1 .84.46 1 1 0 0 1 .17.57 1.37 1.37 0 0 1-.73 1.11 1.9 1.9 0 0 1-.95.32zM78.78 9.44a1.79 1.79 0 0 0-1.71 1.44 2.15 2.15 0 0 0-.1.6 1.9 1.9 0 0 0 .21.95 1.65 1.65 0 0 0 1.45.83 1.49 1.49 0 0 0 .77-.19 2.21 2.21 0 0 0 1-1.89 1.85 1.85 0 0 0-.21-.91 1.62 1.62 0 0 0-1.41-.83zm-.19 3.3a1 1 0 0 1-.87-.53 1.31 1.31 0 0 1-.15-.66c0-.67.44-1.6 1.24-1.6a1.06 1.06 0 0 1 1 1.18c.03.53-.35 1.61-1.22 1.61zM58.26 22.87l.5.15-.56 2-3.59-1 .6-2.06.49.13-.45 1.49 1 .27.37-1.35.48.14-.38 1.36 1.12.3zM59.2 15.13a1.37 1.37 0 0 1 1-.54l.08.49a1.14 1.14 0 0 0-.72.37.71.71 0 0 0-.2.47.36.36 0 0 0 .14.3c.25.23.69 0 1-.13a2.14 2.14 0 0 1 .81-.21 1 1 0 0 1 .66.25 1 1 0 0 1 .38.79 1.29 1.29 0 0 1-.38.87 1.8 1.8 0 0 1-1.1.58l-.13-.49a1.46 1.46 0 0 0 .83-.43.69.69 0 0 0 .2-.46.53.53 0 0 0-.17-.38.42.42 0 0 0-.32-.1 2.2 2.2 0 0 0-.77.23 1.16 1.16 0 0 1-1.35 0 .9.9 0 0 1-.33-.7 1.26 1.26 0 0 1 .37-.91zM88.43 34.2l1.4.63-.07.15c-.19.44-.27.5-.85.51h-1.06l-.25.57h1.22a1.67 1.67 0 0 0 .59-.06l.16-.09V36a1.23 1.23 0 0 0 .07.39 1.07 1.07 0 0 0 1 .59c.6 0 .82-.36 1.11-1l.34-.79-3.37-1.52zm2.18 2.19a.61.61 0 0 1-.55-.37.52.52 0 0 1 0-.21 1.64 1.64 0 0 1 .2-.64l.06-.14 1.07.48-.12.29c-.27.44-.37.59-.66.59zM86.48 37.7a2.34 2.34 0 0 0-.69 1.47 1.86 1.86 0 0 0 .76 1.44 2 2 0 0 0 1.19.44c.51 0 .93-.15 1.57-1l.59-.74L87 37zm1.31 2.79a1.34 1.34 0 0 1-.85-.34 1.44 1.44 0 0 1-.6-1.06 1.62 1.62 0 0 1 .44-1l.24-.31 2.12 1.69-.16.2c-.4.53-.66.82-1.19.82z" fill="#fff"></path><path d="M94.92 28.33a21.23 21.23 0 1 0-33.2 17.51 5 5 0 0 0 4.83 3.69 5.1 5.1 0 0 0 1.81-.34 21.23 21.23 0 0 0 2.37.64 9.7 9.7 0 0 1-.86 1.77l.44.44a.77.77 0 0 1 .38-.1.8.8 0 0 1 0 1.59 1.14 1.14 0 0 1-.9-.51 3.43 3.43 0 0 0-.1.83c0 1.52 1.66 3.26 4 4 2.31-.71 4-2.47 4-4a2.71 2.71 0 0 0-.11-.83 1.15 1.15 0 0 1-.89.51.8.8 0 0 1 0-1.59.82.82 0 0 1 .41.12l.43-.42a9.4 9.4 0 0 1-.59-1.64 15.72 15.72 0 0 0 9.6-4.82 21 21 0 0 0 8.38-16.85zM66.55 48.94a4.39 4.39 0 0 1-4.37-4.39 4.46 4.46 0 0 1 .52-2.09l.72.63a3.49 3.49 0 0 0-.33 1.48A3.54 3.54 0 0 0 65 47.71a17.24 17.24 0 0 0 2.4 1.14 4.12 4.12 0 0 1-.85.09zm7.14-6.38A14 14 0 0 1 71 42.3a5 5 0 0 0-4.46-2.72 4.85 4.85 0 0 0-1.33.18 14.23 14.23 0 1 1 8.47 2.8zm3.16.25a4.9 4.9 0 0 0-.75 2.31 20.74 20.74 0 0 1-3.63-1.3 1.49 1.49 0 0 1 1.22-.66 14.93 14.93 0 0 0 3.16-.35zm-4.51.28a2 2 0 0 0-.43.48c-.53-.27-1.21-.61-1.65-.85a18.49 18.49 0 0 0 2.08.37zm-5.79-2.92a4.38 4.38 0 0 1 3.63 1.95 15.1 15.1 0 0 1-2.06-.69 3.54 3.54 0 0 0-1.5-.34 3.48 3.48 0 0 0-2.83 1.45c-.28-.15-.54-.31-.8-.47a4.36 4.36 0 0 1 3.56-1.9zm10.07 11.17a1.41 1.41 0 1 0 0 2.81 1.4 1.4 0 0 0 .34 0c-.17 1.18-1.54 2.5-3.31 3.09-1.75-.59-3.12-1.91-3.3-3.09a1.27 1.27 0 0 0 .34 0 1.35 1.35 0 0 0 1.42-1.4 1.41 1.41 0 0 0-1.39-1.41 9.43 9.43 0 0 0 .63-1.4 16.73 16.73 0 0 0 2.83.26 18.51 18.51 0 0 0 2.13-.11 9.52 9.52 0 0 0 .39 1.26zm-2.44-1.73a19 19 0 0 1-8.85-2.41 3 3 0 0 1-1.61-2.63 2.89 2.89 0 0 1 .2-1.06 18.87 18.87 0 0 0 2.44 1.78.72.72 0 0 0 .37.11.69.69 0 0 0 .69-.69.68.68 0 0 0-.42-.64c-.5-.22-1.56-.66-2.7-1.25a2.89 2.89 0 0 1 2.29-1.14 2.82 2.82 0 0 1 1.22.27l.78.45c2.49 1.52 8.87 5.4 16.58 3.27a15.68 15.68 0 0 1-10.99 3.94zm11.95-4.86a16.83 16.83 0 0 1-9.41.52c.09-1.23.59-2.54 1.37-2.78A14.87 14.87 0 1 0 64.54 40a4.93 4.93 0 0 0-2.1 1.73c-.27-.19-.53-.38-.78-.58l-.13.13a7.75 7.75 0 0 0 .72.75 4.85 4.85 0 0 0-.7 2.52v.43a20.59 20.59 0 1 1 24.56-.23z" fill="#fff"></path>
+</svg>
+                    <svg xmlns="https://www.w3.org/2000/svg" class="icon icon--logo icon--logo--said" viewBox="0 0 104 104">
+  <title>Saïd Business School</title>
+  <path fill="#fff" d="M0 0h104v104H0z"></path><path class="border" d="M101.48 2.52v99h-99v-99h99M104 0H0v104h104V0z" fill="currentColor"></path><g fill="#002147"><path d="M65.32 40.79L94.9 57.85v-7.94L65.32 32.85v7.94zM70.24 32.22L94.9 46.44v-7.95L70.24 24.27v7.95zM75.19 23.66L94.9 35.03v-7.95L75.19 15.71v7.95zM80.12 7.14v7.96l14.8 8.53v-7.95l-14.8-8.54z"></path></g><g fill="#002147"><path d="M10.21 54.32h.67a9.37 9.37 0 0 0 .38 1 7 7 0 0 0 .87 1.68 2.8 2.8 0 0 0 1.92.66 2.27 2.27 0 0 0 2.52-2.41c0-1.44-1.07-2.07-2.27-2.69l-.56-.26c-2-1-3.2-1.88-3.2-3.92 0-2.32 2.09-3.68 4.87-3.68a10.28 10.28 0 0 1 1.95.18l.9.11.13 3.01h-.58a10.12 10.12 0 0 0-.35-1 5.43 5.43 0 0 0-.71-1.35 2.61 2.61 0 0 0-1.69-.54 2 2 0 0 0-2.23 2.07c0 1.33.66 2.07 2.44 2.93l.87.45a6.76 6.76 0 0 1 2.08 1.47 3.23 3.23 0 0 1 .78 2.25c0 2.43-2.06 3.86-5 3.86a11.84 11.84 0 0 1-2.32-.27l-1.07-.27zM26.94 58.2a2 2 0 0 1-1.86-1.06l-.68.32a4 4 0 0 1-2 .62 2.34 2.34 0 0 1-1.63-.54 1.67 1.67 0 0 1-.6-1.36 1.77 1.77 0 0 1 1.08-1.66 23.13 23.13 0 0 1 3.26-1.08l.45-.13v-1.86c0-1.11-.62-1.59-1.64-1.59a2.26 2.26 0 0 0-1 .21l-.1 1.09-1.55.49a.42.42 0 0 1-.32-.41c0-.27.14-.48.55-.83a7 7 0 0 1 3.55-1.6 3.38 3.38 0 0 1 2.26.6 2 2 0 0 1 .58 1.59l-.14 5.24 1.6 1zm-3.29-4c-.87.27-1.24.58-1.24 1.43a1.31 1.31 0 0 0 1.33 1.48 1.43 1.43 0 0 0 1.15-.49v-2.83zM30.18 44.54a1.16 1.16 0 0 1 .8.32 1.1 1.1 0 0 1 .34.83 1 1 0 0 1-.34.81 1.16 1.16 0 0 1-.8.32 1.14 1.14 0 0 1 0-2.28zm-.68 5.38v-.06l3.63-1.14h.13v8.14l1.07 1v.06h-4.69v-.06l1.14-1v-6.1zm4.25-5.38a1.14 1.14 0 1 1 0 2.28 1.14 1.14 0 0 1 0-2.28zM44.09 45.57v11.1l1.38.37v.06l-3.6 1.1h-.12l-.08-1.2-.68.32a4.84 4.84 0 0 1-2.17.65c-2 0-3.72-1.53-3.72-4.25 0-3.11 2.2-4.89 5.06-4.89a6.31 6.31 0 0 1 1.53.2v-3.65l-1.3-.72v-.06l3.66-1h.12zm-2.44 6.69c0-1.83-.49-2.92-1.71-2.92a1.81 1.81 0 0 0-1.6 1 5.34 5.34 0 0 0-.61 2.75c0 2.38 1.07 3.88 2.6 3.88a1.83 1.83 0 0 0 1.32-.53zM9 75.48v-.06l1.91-1.12V63.65L9 62.53v-.06h6.82c3 0 4.37 1 4.37 3a2.92 2.92 0 0 1-2.62 2.86c1.95.32 3.39 1.43 3.39 3.4 0 2.55-2.31 3.9-5.87 3.9-.86 0-2.21-.08-2.86-.08zm7.72-11.87A3.31 3.31 0 0 0 14.6 63a4.89 4.89 0 0 0-1.13.11v5.24a6.67 6.67 0 0 0 .83 0c1.65 0 3.19-.54 3.19-2.79a2.37 2.37 0 0 0-.8-1.95zm.57 6a4 4 0 0 0-2.51-.72 7 7 0 0 0-1.28.09v3.45a4.63 4.63 0 0 0 .26 2c.24.46.78.58 1.45.58a2.87 2.87 0 0 0 3-3.18 2.68 2.68 0 0 0-.95-2.2zM32.12 74.68v.06l-3.42 1.05-.3-.08-.06-1.2-.39.23a5 5 0 0 1-2.74 1c-1.58 0-2.36-.85-2.36-2.52v-5.29l-1.17-1.07 3.67-.07v6.26a1.43 1.43 0 0 0 1.53 1.57A1.92 1.92 0 0 0 28.3 74v-6l-1.67-1v-.06l4.17-.07v7.6zM33.66 72.78c.09.26.19.51.29.74a5.83 5.83 0 0 0 .59 1.2 1.82 1.82 0 0 0 1.32.47c.92 0 1.52-.47 1.52-1.34s-.35-1.06-1.44-1.67l-1-.54a2.75 2.75 0 0 1-1.7-2.58c0-1.63 1.55-2.56 3.54-2.56a5.47 5.47 0 0 1 2.33.44l.08 2.2h-.59a7.12 7.12 0 0 0-.26-.74 4.27 4.27 0 0 0-.63-1.09 1.68 1.68 0 0 0-1.06-.31c-.87 0-1.34.47-1.34 1.19a1.42 1.42 0 0 0 .3.9 4 4 0 0 0 1.17.86l.72.41a5.32 5.32 0 0 1 1.55 1.16 2.18 2.18 0 0 1 .45 1.4 2.48 2.48 0 0 1-1 2 4.14 4.14 0 0 1-2.67.77 5.43 5.43 0 0 1-1.71-.23 7.2 7.2 0 0 1-1-.39L33 72.8zM40.36 67.55v-.06L44 66.35h.13v8.15l1.07 1v.06h-4.7v-.06l1.14-1v-6.16zm1.42-5.66a1.43 1.43 0 0 1 2.07 2 1.49 1.49 0 0 1-2.07 0 1.36 1.36 0 0 1-.39-1 1.44 1.44 0 0 1 .39-1zM46 67.55v-.06l3.55-1.14h.12v1.37l.58-.35a5.28 5.28 0 0 1 2.48-.93c1.82 0 2.54 1 2.54 2.7v5.29l1.17 1v.06h-4.71v-.06l1.08-1V69.2a1.45 1.45 0 0 0-1.61-1.54 1.84 1.84 0 0 0-1 .22 3.57 3.57 0 0 0-.54.38v6.17l1.07 1v.06h-4.61v-.06l1.14-1v-6.09zM64.69 70l-5.27-.18c-.1 1.72.54 4.33 3 4.33a2.78 2.78 0 0 0 1.47-.34 4.75 4.75 0 0 0 .93-.72l.24.47a4.73 4.73 0 0 1-3.88 2.14A4.08 4.08 0 0 1 57 71.33a4.62 4.62 0 0 1 4.59-4.87 3.3 3.3 0 0 1 2.5.87 3.18 3.18 0 0 1 .91 2.29zm-2-.6c.05-1.6-.54-2.45-1.52-2.45s-1.61 1.1-1.71 2.45zM66.85 72.78c.09.26.19.51.29.74a5.83 5.83 0 0 0 .58 1.2 1.86 1.86 0 0 0 1.32.47c.92 0 1.53-.47 1.53-1.34s-.36-1.06-1.44-1.67l-1-.54a2.76 2.76 0 0 1-1.71-2.58c0-1.63 1.56-2.56 3.54-2.56a5.49 5.49 0 0 1 2.34.44l.08 2.2h-.61a7.12 7.12 0 0 0-.27-.74 4.25 4.25 0 0 0-.62-1.09 1.7 1.7 0 0 0-1.04-.31c-.88 0-1.34.47-1.34 1.19a1.47 1.47 0 0 0 .29.9 4.11 4.11 0 0 0 1.17.86l.73.41a5.47 5.47 0 0 1 1.55 1.16 2.23 2.23 0 0 1 .44 1.4 2.47 2.47 0 0 1-.94 2 4.17 4.17 0 0 1-2.68.77 5.41 5.41 0 0 1-1.7-.23 8 8 0 0 1-1-.39l-.16-2.29zM74.67 72.78a7.12 7.12 0 0 0 .28.74 5.83 5.83 0 0 0 .59 1.2 1.84 1.84 0 0 0 1.32.47c.92 0 1.53-.47 1.53-1.34S78 72.79 77 72.18l-1-.54a2.74 2.74 0 0 1-1.71-2.58c0-1.63 1.56-2.56 3.54-2.56a5.43 5.43 0 0 1 2.33.44l.08 2.2h-.6a7.12 7.12 0 0 0-.27-.74 4.27 4.27 0 0 0-.63-1.09 1.66 1.66 0 0 0-1.09-.31c-.87 0-1.34.47-1.34 1.19a1.42 1.42 0 0 0 .3.9 4.11 4.11 0 0 0 1.17.86l.73.41a5.25 5.25 0 0 1 1.54 1.16 2.18 2.18 0 0 1 .45 1.4 2.5 2.5 0 0 1-.94 2 4.19 4.19 0 0 1-2.68.77 5.48 5.48 0 0 1-1.71-.23 8.37 8.37 0 0 1-1-.39L74 72.8zM10.21 89.57h.67a8.85 8.85 0 0 0 .38 1.06 6.67 6.67 0 0 0 .87 1.58 2.75 2.75 0 0 0 1.92.67 2.27 2.27 0 0 0 2.52-2.41c0-1.44-1.07-2.08-2.27-2.69l-.56-.26c-2-1-3.2-1.88-3.2-3.92 0-2.32 2.09-3.68 4.87-3.68a10.28 10.28 0 0 1 1.95.18l.9.11.13 3.08h-.58c-.11-.34-.22-.67-.35-1a5.43 5.43 0 0 0-.71-1.29 2.56 2.56 0 0 0-1.69-.54 2 2 0 0 0-2.23 2.07c0 1.33.66 2.06 2.44 2.93l.87.44a7 7 0 0 1 2.08 1.48 3.23 3.23 0 0 1 .78 2.16c0 2.43-2.06 3.86-5 3.86a11.84 11.84 0 0 1-2.32-.27l-1.07-.27zM27.69 86.19a1.52 1.52 0 0 1-.69.44l-2.17-2c-1.4.16-2.08 1.7-2.08 3.42s.89 3.76 2.87 3.78a2.67 2.67 0 0 0 2.13-.92l.25.45a4.54 4.54 0 0 1-3.7 2 4 4 0 0 1-4-4.34 4.72 4.72 0 0 1 4.94-4.93c1.79 0 2.81.79 2.81 1.34a1.06 1.06 0 0 1-.36.76zM28.29 80v-.1l3.66-1h.12v6.52l.53-.35a5.25 5.25 0 0 1 2.4-1c1.82 0 2.54 1 2.54 2.7v5.29l1.18 1v.06h-4.65v-.06l1.08-1v-5.23a1.45 1.45 0 0 0-1.61-1.54 1.84 1.84 0 0 0-1 .22 3.12 3.12 0 0 0-.55.38v6.17l1.08 1v.06h-4.61v-.06l1.13-1V80.67zM44.17 84.09a4.4 4.4 0 0 1 4.72 4.56 4.58 4.58 0 0 1-4.81 4.71 4.38 4.38 0 0 1-4.73-4.62 4.6 4.6 0 0 1 4.82-4.65zm-2.11 4.12c0 2.43.76 4.7 2.37 4.7 1.24 0 1.8-1.59 1.8-3.68 0-2.38-.82-4.7-2.44-4.7-1.2 0-1.73 1.62-1.73 3.68zM54.84 84.09a4.4 4.4 0 0 1 4.72 4.56 4.58 4.58 0 0 1-4.82 4.71A4.37 4.37 0 0 1 50 88.74a4.6 4.6 0 0 1 4.84-4.65zm-2.11 4.12c0 2.43.75 4.7 2.37 4.7 1.24 0 1.8-1.59 1.8-3.68 0-2.38-.82-4.7-2.44-4.7-1.21 0-1.73 1.62-1.73 3.68zM65 93.05v.06h-4.82v-.06l1.16-1V80.67L60 80v-.1l3.66-1h.12v13.16z"></path></g>
+</svg>
+                    <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 160.43 105"><defs><style>.wht-25y-cls-1{fill:#fff;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_2-2" data-name="Layer 2"><path class="wht-25y-cls-1" d="M75.25,43.05l2.09-9.16h-31L41.24,55.66,11.35,57c14-13.64,28.89-23.8,28.89-39.64C40.24,7.07,33.07,0,22.51,0,11.65,0,4.78,8,2.29,15.64l2,1.49c2.89-5.08,7-10.06,14-10.06,7.77,0,12,5.88,12,13.35C30.18,34.06,16.73,48,0,62.55l.4,2.09,38.74.06C55.26,66.35,65.2,73.53,65.2,84.79c0,9.72-6,17.12-15.68,17.12a10.72,10.72,0,0,1-7.73-2.76L37,90.09c-4.53-.66-6.51,1.44-6.51,3.87,0,5.19,7.28,11,19.1,11,15.57,0,25.62-11,25.62-23.74,0-16.45-15-23.52-30.7-25.73l2.87-12.48Z"/><path class="wht-25y-cls-1" d="M91.19,47h.08l4-10.82-2.35-1.84v-.24h6.41v.24L97,36.11c-.82,2.11-4.49,11.4-5.93,15-1.25,3.13-2.47,6.64-3.17,8.32a2.4,2.4,0,0,1-2.34,1.53,1.84,1.84,0,0,1-2-1.88,1.88,1.88,0,0,1,2.11-1.84,2.73,2.73,0,0,1,1.25.28l2.5-6.1L83.14,35.72,81,34.31v-.24h8.48v.24l-2.46,1.6Z"/><path class="wht-25y-cls-1" d="M104,39.74a10,10,0,0,0-.12,1.56c0,3.64,1.88,7.54,6,7.54a5.9,5.9,0,0,0,4.53-2.15l.55,1a9.14,9.14,0,0,1-7.19,3.52c-4,0-7.42-3.09-7.42-8.25,0-5.58,3.63-9.45,8.32-9.45,3.87,0,5.94,2.19,6,5.78l-.5.63Zm7.23-1.13c0-2.11-1-3.91-3.13-3.91s-3.55,1.76-3.94,3.91Z"/><path class="wht-25y-cls-1" d="M130.19,51.27a3.64,3.64,0,0,1-3.44-2l-1.37.75a7.59,7.59,0,0,1-3.87,1.17c-2.38,0-4-1.37-4-3.48a3.15,3.15,0,0,1,1.68-2.89,35,35,0,0,1,7.54-2.7l0-3.32c0-2.11-1-3.4-3.4-3.4a3.42,3.42,0,0,0-1.88.51l-.31,1.76-2.78.9c-.31,0-.46-.51-.46-.74,0-1.92,5.35-4.3,7.62-4.3,2.61,0,4.57,1.64,4.57,4l-.28,10.47,3.25,2Zm-3.48-8.13c-.24.12-1.13.35-1.92.62C122,44.78,121,45.25,121,47a2.4,2.4,0,0,0,2.58,2.42,5.06,5.06,0,0,0,3.09-1.29Z"/><path class="wht-25y-cls-1" d="M143.78,50.56v.24h-8.91v-.24l2-1.52V36.77l-2.43-1.05v-.24l5.67-2.15h.23v3.09h0c1.06-1.21,2.74-2.93,4.61-2.93a2.4,2.4,0,0,1,2.35,1.68,4.6,4.6,0,0,1-1.64,2.26h-.24a5.71,5.71,0,0,0-2.81-1.32,2.37,2.37,0,0,0-2.27,2.18V49Z"/><path class="wht-25y-cls-1" d="M150,45.91a7.89,7.89,0,0,0,1.64,3.25,3.48,3.48,0,0,0,2.58.89c2.07,0,3.16-1.17,3.16-2.69,0-1.88-1.48-2.38-3.63-3.75l-1.06-.67c-2.07-1.32-3.2-2.46-3.2-4.69,0-2.85,2.73-4.76,6.13-4.76a10.52,10.52,0,0,1,4.3.86l.16,4.06h-.94a6.87,6.87,0,0,0-1.45-3,3.6,3.6,0,0,0-2.38-.74c-2,0-2.78,1.21-2.78,2.38,0,1.45.79,2.27,3,3.52l1.1.63c2.62,1.48,3.87,2.57,3.87,4.8,0,3.09-2.58,5.24-6.25,5.24a10.17,10.17,0,0,1-4.81-1.06L148.94,46Z"/></g></g></svg>
+          <span class="visually-hidden">25</span>
+        </a>
+        <div class="clearfix"></div>
+      </div>
+      <div class="navbar-header">
+        
+                  
+ 
+
+<button aria-controls="navbar" class="show-menu hamburger hamburger--collapse" aria-expanded="false" type="button">
+  <span class="visually-hidden">Main menu</span>
+  <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+  </span>
+</button>
+              </div>
+    </header>
+
+    
+              
+    <div  class="navbar navbar--primary navbar-default container navbar--overlaid" id="navbar">
+                        <div class="navigation-container">
+              <div class="region region-navigation-collapsible">
+    <nav role="navigation" aria-labelledby="block-topmenu-2-menu" id="block-topmenu-2" data-block-plugin-id="system_menu_block:top-menu">
+            
+  <h2 class="visually-hidden" id="block-topmenu-2-menu">Top menu</h2>
+  
+
+        
+
+
+      <ul class="menu menu--top-menu">
+                      <li class="first last">
+                                        <a href="https://sbs.ox.ac.uk/oxford-answers" class="oxford-answers-homepage" title="Business insights" data-drupal-link-system-path="node/12881">Insights</a>
+              </li>
+      </ul>
+  
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-said-main-menu-menu" id="block-said-main-menu" data-block-plugin-id="system_menu_block:main" class="block-main-menu">
+            <h2 class="sr-only" id="block-said-main-menu-menu">Main navigation</h2>
+
+      
+
+
+  
+          
+      <div class="nav__items nav__items--level-0">
+      <div aria-hidden="true" class="nav__title">
+                  Main menu
+              </div>
+            <ul>
+                                            <li class="nav__item has-children">
+                                          <a aria-expanded="false"
+                  aria-label="Research submenu"
+                  class="nav__item__link has-subnav show-submenu"
+                  data-js-show-submenu
+                  href="https://sbs.ox.ac.uk/research"
+                  role="button">
+ Research &nbsp;&nbsp;<span class="glyphicon glyphicon-menu-down" style="font-size:12px;"></span>
+                </a>
+                          
+                                                      
+          
+      <div class="nav__items nav__items--level-1 is-subnav">
+      <div aria-hidden="true" class="nav__title">
+                  Research
+              </div>
+      <div class="sub-menu">      <ul>
+                  <li class="hide-mobile">
+            <button
+              class="nav-control glyphicon glyphicon-remove"
+              data-js-hide-submenu
+              type="button"
+            >
+              <span class="visually-hidden">Close Research submenu</span>
+            </button>
+          </li>
+                                            <li class="nav__item has-children">
+            
+                          <a href="https://sbs.ox.ac.uk/research" class="nav__item__link has-subnav">
+                Research overview
+              </a>
+                              <button aria-expanded="false"
+                  class="nav-more show-subsubmenu"
+                  data-js-show-submenu
+                >
+                  <span class="visually-hidden">Research overview submenu</span>
+                  <span class="glyphicon glyphicon-menu-right" style="font-size:12px;"></span>
+                </button>
+                                                                    
+          
+      <div class="nav__items nav__items--level-2 is-subnav">
+      <div aria-hidden="true" class="nav__title">
+                  Research overview
+              </div>
+      <div class="sub-menu">      <ul>
+                                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/research/research-overview/research-seminars" class="nav__item__link">
+                Research seminars
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/research/research-overview/research-strategy" class="nav__item__link">
+                Research strategy
+              </a>
+                                                </li>
+        
+                  <li class="nav__item">
+            <button class="nav__item__text hide-submenu" data-js-hide-submenu>
+              <i aria-hidden="true" class="glyphicon glyphicon-menu-left" style="font-size:12px;"></i>
+              Back
+              <span class="visually-hidden">to Research menu</span>
+            </button>
+&nbsp;          </li>
+              </ul>
+      </div>    </div>
+    
+  
+                      </li>
+                            <li class="nav__item has-children">
+            
+                          <a href="https://sbs.ox.ac.uk/research/research-areas" class="nav__item__link has-subnav">
+                Research areas
+              </a>
+                              <button aria-expanded="false"
+                  class="nav-more show-subsubmenu"
+                  data-js-show-submenu
+                >
+                  <span class="visually-hidden">Research areas submenu</span>
+                  <span class="glyphicon glyphicon-menu-right" style="font-size:12px;"></span>
+                </button>
+                                                                    
+          
+      <div class="nav__items nav__items--level-2 is-subnav">
+      <div aria-hidden="true" class="nav__title">
+                  Research areas
+              </div>
+      <div class="sub-menu">      <ul>
+                                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/research/research-areas/accounting" class="nav__item__link">
+                Accounting
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/research/research-areas/finance" class="nav__item__link">
+                Finance
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/research/research-areas/health-care" class="nav__item__link">
+                Health Care
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/research/research-areas/impact" class="nav__item__link">
+                Impact
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/research/research-areas/innovation" class="nav__item__link">
+                Innovation
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/research/research-areas/international-business" class="nav__item__link">
+                International Business
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/research/research-areas/management-science" class="nav__item__link">
+                Management Science
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/research/research-areas/marketing" class="nav__item__link">
+                Marketing
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/research/research-areas/major-programme-management" class="nav__item__link">
+                Major Programme Management
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/research/research-areas/organisation-studies" class="nav__item__link">
+                Organisation Studies
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/research/research-areas/professional-service-firms" class="nav__item__link">
+                Professional Service Firms
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/research/research-areas/strategy" class="nav__item__link">
+                Strategy
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/research/research-areas/technology-and-operations-management" class="nav__item__link">
+                Technology and Operations Management
+              </a>
+                                                </li>
+        
+                  <li class="nav__item">
+            <button class="nav__item__text hide-submenu" data-js-hide-submenu>
+              <i aria-hidden="true" class="glyphicon glyphicon-menu-left" style="font-size:12px;"></i>
+              Back
+              <span class="visually-hidden">to Research menu</span>
+            </button>
+          </li>
+              </ul>
+      </div>    </div>
+    
+  
+                      </li>
+                            <li class="nav__item has-children">
+            
+                          <a href="https://sbs.ox.ac.uk/research/centres-and-initiatives" class="nav__item__link has-subnav">
+                Centres and initiatives
+              </a>
+                              <button aria-expanded="false"
+                  class="nav-more show-subsubmenu"
+                  data-js-show-submenu
+                >
+                  <span class="visually-hidden">Centres and initiatives submenu</span>
+                  <span class="glyphicon glyphicon-menu-right" style="font-size:12px;"></span>
+                </button>
+                                                                    
+          
+      <div class="nav__items nav__items--level-2 is-subnav">
+      <div aria-hidden="true" class="nav__title">
+                  Centres and initiatives
+              </div>
+      <div class="sub-menu">      <ul>
+                                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/research/centres-and-initiatives/creative-destruction-lab-oxford" class="nav__item__link">
+                Creative Destruction Lab Oxford
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/research/centres-and-initiatives/entrepreneurship-centre" class="nav__item__link">
+                Entrepreneurship Centre
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/research/centres-and-initiatives/oxford-future-finance-and-technology-initiative" class="nav__item__link">
+                Oxford Future of Finance and Technology Initiative
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/research/centres-and-initiatives/oxford-future-marketing-initiative" class="nav__item__link">
+                Oxford Future of Marketing Initiative
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/research/centres-and-initiatives/oxford-future-real-estate-initiative" class="nav__item__link">
+                Oxford Future of Real Estate Initiative
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/research/centres-and-initiatives/oxford-initiative-aisdgs" class="nav__item__link">
+                Oxford Initiative on AI×SDGs
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/research/centres-and-initiatives/oxford-initiative-rethinking-performance" class="nav__item__link">
+                Oxford Initiative on Rethinking Performance
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/research/centres-and-initiatives/oxford-university-centre-business-taxation" class="nav__item__link">
+                Oxford University Centre for Business Taxation
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/research/centres-and-initiatives/oxford-university-centre-corporate-reputation" class="nav__item__link">
+                Oxford University Centre for Corporate Reputation
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/research/centres-and-initiatives/private-equity-institute" class="nav__item__link">
+                Private Equity Institute
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/research/centres-and-initiatives/responsible-business" class="nav__item__link">
+                Responsible Business
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/research/centres-and-initiatives/skoll-centre-social-entrepreneurship" class="nav__item__link">
+                Skoll Centre for Social Entrepreneurship
+              </a>
+                                                </li>
+        
+                  <li class="nav__item">
+            <button class="nav__item__text hide-submenu" data-js-hide-submenu>
+              <i aria-hidden="true" class="glyphicon glyphicon-menu-left" style="font-size:12px;"></i>
+              Back
+              <span class="visually-hidden">to Research menu</span>
+            </button>
+          </li>
+              </ul>
+      </div>    </div>
+    
+  
+                      </li>
+                            <li class="nav__item has-children">
+            
+                          <a href="https://sbs.ox.ac.uk/research/networks" class="nav__item__link has-subnav">
+                Networks
+              </a>
+                              <button aria-expanded="false"
+                  class="nav-more show-subsubmenu"
+                  data-js-show-submenu
+                >
+                  <span class="visually-hidden">Networks submenu</span>
+                  <span class="glyphicon glyphicon-menu-right" style="font-size:12px;"></span>
+                </button>
+                                                                    
+          
+      <div class="nav__items nav__items--level-2 is-subnav">
+      <div aria-hidden="true" class="nav__title">
+                  Networks
+              </div>
+      <div class="sub-menu">      <ul>
+                                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/research/networks/cabdyn" class="nav__item__link">
+                CABDyN
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/research/networks/oxford-institute-retail-management" class="nav__item__link">
+                Oxford Institute of Retail Management
+              </a>
+                                                </li>
+        
+                  <li class="nav__item">
+            <button class="nav__item__text hide-submenu" data-js-hide-submenu>
+              <i aria-hidden="true" class="glyphicon glyphicon-menu-left" style="font-size:12px;"></i>
+              Back
+              <span class="visually-hidden">to Research menu</span>
+            </button>
+          </li>
+              </ul>
+      </div>    </div>
+    
+  
+                      </li>
+        
+                  <li class="nav__item">
+            <button class="nav__item__text hide-submenu" data-js-hide-submenu>
+              <i aria-hidden="true" class="glyphicon glyphicon-menu-left" style="font-size:12px;"></i>
+              Back
+              <span class="visually-hidden">to main menu</span>
+            </button>
+          </li>
+              </ul>
+      </div>    </div>
+    
+  
+                      </li>
+                            <li class="nav__item has-children">
+                                          <a aria-expanded="false"
+                  aria-label="Oxford experience submenu"
+                  class="nav__item__link has-subnav show-submenu"
+                  data-js-show-submenu
+                  href="https://sbs.ox.ac.uk/oxford-experience"
+                  role="button"
+                >
+                  Oxford experience &nbsp;&nbsp;<span class="glyphicon glyphicon-menu-down" style="font-size:12px;"></span>
+                </a>
+                          
+                                                      
+          
+      <div class="nav__items nav__items--level-1 is-subnav">
+      <div aria-hidden="true" class="nav__title">
+                  Oxford experience
+              </div>
+      <div class="sub-menu">      <ul>
+                  <li class="hide-mobile">
+            <button
+              class="nav-control glyphicon glyphicon-remove"
+              data-js-hide-submenu
+              type="button"
+            >
+              <span class="visually-hidden">Close Oxford experience submenu</span>
+            </button>
+          </li>
+                                            <li class="nav__item has-children">
+            
+                          <a href="https://sbs.ox.ac.uk/oxford-experience/coming-oxford" class="nav__item__link has-subnav">
+                Coming to Oxford
+              </a>
+                              <button aria-expanded="false"
+                  class="nav-more show-subsubmenu"
+                  data-js-show-submenu
+                >
+                  <span class="visually-hidden">Coming to Oxford submenu</span>
+                  <span class="glyphicon glyphicon-menu-right" style="font-size:12px;"></span>
+                </button>
+                                                                    
+          
+      <div class="nav__items nav__items--level-2 is-subnav">
+      <div aria-hidden="true" class="nav__title">
+                  Coming to Oxford
+              </div>
+      <div class="sub-menu">      <ul>
+                                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/oxford-experience/coming-oxford/college-experience" class="nav__item__link">
+                College experience
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/oxford-experience/coming-oxford/living-expenses" class="nav__item__link">
+                Living expenses
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/oxford-experience/coming-oxford/partners-and-families" class="nav__item__link">
+                Partners and families
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/oxford-experience/coming-oxford/visas" class="nav__item__link">
+                Visas
+              </a>
+                                                </li>
+        
+                  <li class="nav__item">
+            <button class="nav__item__text hide-submenu" data-js-hide-submenu>
+              <i aria-hidden="true" class="glyphicon glyphicon-menu-left" style="font-size:12px;"></i>
+              Back
+              <span class="visually-hidden">to Oxford experience menu</span>
+            </button>
+          </li>
+              </ul>
+      </div>    </div>
+    
+  
+                      </li>
+                            <li class="nav__item has-children">
+            
+                          <a href="https://sbs.ox.ac.uk/oxford-experience/life-oxford" class="nav__item__link has-subnav">
+                Life at Oxford
+              </a>
+                              <button aria-expanded="false"
+                  class="nav-more show-subsubmenu"
+                  data-js-show-submenu
+                >
+                  <span class="visually-hidden">Life at Oxford submenu</span>
+                  <span class="glyphicon glyphicon-menu-right" style="font-size:12px;"></span>
+                </button>
+                                                                    
+          
+      <div class="nav__items nav__items--level-2 is-subnav">
+      <div aria-hidden="true" class="nav__title">
+                  Life at Oxford
+              </div>
+      <div class="sub-menu">      <ul>
+                                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/oxford-experience/life-oxford/learning-oxford" class="nav__item__link">
+                Learning at Oxford
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/oxford-experience/life-oxford/exploring-oxford" class="nav__item__link">
+                Exploring Oxford
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/oxford-experience/life-oxford/activities-clubs-and-groups" class="nav__item__link">
+                Activities, clubs and groups
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/oxford-experience/life-oxford/oxford-union" class="nav__item__link">
+                Oxford Union
+              </a>
+                                                </li>
+        
+                  <li class="nav__item">
+            <button class="nav__item__text hide-submenu" data-js-hide-submenu>
+              <i aria-hidden="true" class="glyphicon glyphicon-menu-left" style="font-size:12px;"></i>
+              Back
+              <span class="visually-hidden">to Oxford experience menu</span>
+            </button>
+          </li>
+              </ul>
+      </div>    </div>
+    
+  
+                      </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/oxford-experience/alumni" class="nav__item__link">
+                Alumni
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/oxford-experience/scholarships-and-funding" class="nav__item__link">
+                Scholarships and Funding
+              </a>
+                                                </li>
+        
+                  <li class="nav__item">
+            <button class="nav__item__text hide-submenu" data-js-hide-submenu>
+              <i aria-hidden="true" class="glyphicon glyphicon-menu-left" style="font-size:12px;"></i>
+              Back
+              <span class="visually-hidden">to main menu</span>
+            </button>
+          </li>
+              </ul>
+      </div>    </div>
+    
+  
+                      </li>
+                            <li class="nav__item has-children">
+                                          <a aria-expanded="false"
+                  aria-label="Events submenu"
+                  class="nav__item__link has-subnav show-submenu"
+                  data-js-show-submenu
+                  href="/events"
+                  role="button"
+                >
+                  Events &nbsp;&nbsp;<span class="glyphicon glyphicon-menu-down" style="font-size:12px;"></span>
+                </a>
+                          
+                                                      
+          
+      <div class="nav__items nav__items--level-1 is-subnav">
+      <div aria-hidden="true" class="nav__title">
+                  Events
+              </div>
+      <div class="sub-menu">      <ul>
+                  <li class="hide-mobile">
+            <button
+              class="nav-control glyphicon glyphicon-remove"
+              data-js-hide-submenu
+              type="button"
+            >
+              <span class="visually-hidden">Close Events submenu</span>
+            </button>
+          </li>
+                                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/events" class="nav__item__link">
+                Events listing
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/past-events" class="nav__item__link">
+                Past events
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/events/business-next-25-years" class="nav__item__link">
+                Business: the next 25 years
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/events/leadership-extraordinary-times" class="nav__item__link">
+                Leadership in extraordinary times
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/events/oxford-smart-space-series" class="nav__item__link">
+                Oxford Smart Space
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/events/wilma-x-sbs" class="nav__item__link">
+                Wilm&amp;a x SBS
+              </a>
+                                                </li>
+        
+                  <li class="nav__item">
+            <button class="nav__item__text hide-submenu" data-js-hide-submenu>
+              <i aria-hidden="true" class="glyphicon glyphicon-menu-left" style="font-size:12px;"></i>
+              Back
+              <span class="visually-hidden">to main menu</span>
+            </button>
+          </li>
+              </ul>
+      </div>    </div>
+    
+  
+                      </li>
+                            <li class="nav__item has-children">
+                                          <a aria-expanded="false"
+                  aria-label="About us submenu"
+                  class="nav__item__link has-subnav show-submenu"
+                  data-js-show-submenu
+                  href="https://sbs.ox.ac.uk/about-us"
+                  role="button"
+                >
+                  About us &nbsp;&nbsp;<span class="glyphicon glyphicon-menu-down" style="font-size:12px;"></span>
+                </a>
+                          
+                                                      
+          
+      <div class="nav__items nav__items--level-1 is-subnav">
+      <div aria-hidden="true" class="nav__title">
+                  About us
+              </div>
+      <div class="sub-menu">      <ul>
+                  <li class="hide-mobile">
+            <button
+              class="nav-control glyphicon glyphicon-remove"
+              data-js-hide-submenu
+              type="button"
+            >
+              <span class="visually-hidden">Close About us submenu</span>
+            </button>
+          </li>
+                                            <li class="nav__item has-children">
+            
+                          <a href="https://sbs.ox.ac.uk/about-us/school" class="nav__item__link has-subnav">
+                The School
+              </a>
+                              <button aria-expanded="false"
+                  class="nav-more show-subsubmenu"
+                  data-js-show-submenu
+                >
+                  <span class="visually-hidden">The School submenu</span>
+                  <span class="glyphicon glyphicon-menu-right" style="font-size:12px;"></span>
+                </button>
+                                                                    
+          
+      <div class="nav__items nav__items--level-2 is-subnav">
+      <div aria-hidden="true" class="nav__title">
+                  The School
+              </div>
+      <div class="sub-menu">      <ul>
+                                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/about-us/school/covid-19-information" class="nav__item__link">
+                Covid-19 information
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/about-us/school/our-history" class="nav__item__link">
+                Our history
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/about-us/school/our-community" class="nav__item__link">
+                Our community
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/about-us/school/diversity-and-inclusion" class="nav__item__link">
+                Diversity and inclusion
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/about-us/school/climate-emergency" class="nav__item__link">
+                Climate emergency
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/about-us/school/rankings-achievements-and-accreditation" class="nav__item__link">
+                Rankings, achievements and accreditation
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/about-us/school/school-board-and-global-leadership-council" class="nav__item__link">
+                School Board and Global Leadership Council
+              </a>
+                                                </li>
+        
+                  <li class="nav__item">
+            <button class="nav__item__text hide-submenu" data-js-hide-submenu>
+              <i aria-hidden="true" class="glyphicon glyphicon-menu-left" style="font-size:12px;"></i>
+              Back
+              <span class="visually-hidden">to About us menu</span>
+            </button>
+          </li>
+              </ul>
+      </div>    </div>
+    
+  
+                      </li>
+                            <li class="nav__item has-children">
+            
+                          <a href="https://sbs.ox.ac.uk/about-us/support-us" class="nav__item__link has-subnav">
+                Support us
+              </a>
+                              <button aria-expanded="false"
+                  class="nav-more show-subsubmenu"
+                  data-js-show-submenu
+                >
+                  <span class="visually-hidden">Support us submenu</span>
+                  <span class="glyphicon glyphicon-menu-right" style="font-size:12px;"></span>
+                </button>
+                                                                    
+          
+      <div class="nav__items nav__items--level-2 is-subnav">
+      <div aria-hidden="true" class="nav__title">
+                  Support us
+              </div>
+      <div class="sub-menu">      <ul>
+                                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/about-us/support-us/fundraising-priorities" class="nav__item__link">
+                Fundraising priorities
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://www.oxfordbusinessalumni.org/donate" class="nav__item__link">
+                Donate online
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/about-us/support-us/how-give" class="nav__item__link">
+                How to give
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/about-us/support-us/corporate-partnerships" class="nav__item__link">
+                Corporate partnerships
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/about-us/support-us/impact-and-recognition" class="nav__item__link">
+                Impact and recognition
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://givingday.sbs.ox.ac.uk" class="nav__item__link">
+                Giving Day 2021
+              </a>
+                                                </li>
+        
+                  <li class="nav__item">
+            <button class="nav__item__text hide-submenu" data-js-hide-submenu>
+              <i aria-hidden="true" class="glyphicon glyphicon-menu-left" style="font-size:12px;"></i>
+              Back
+              <span class="visually-hidden">to About us menu</span>
+            </button>
+          </li>
+              </ul>
+      </div>    </div>
+    
+  
+                      </li>
+                            <li class="nav__item has-children">
+            
+                          <a href="https://sbs.ox.ac.uk/about-us/people" class="nav__item__link has-subnav">
+                Our people
+              </a>
+                              <button aria-expanded="false"
+                  class="nav-more show-subsubmenu"
+                  data-js-show-submenu
+                >
+                  <span class="visually-hidden">Our people submenu</span>
+                  <span class="glyphicon glyphicon-menu-right" style="font-size:12px;"></span>
+                </button>
+                                                                    
+          
+      <div class="nav__items nav__items--level-2 is-subnav">
+      <div aria-hidden="true" class="nav__title">
+                  Our people
+              </div>
+      <div class="sub-menu">      <ul>
+                                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/about-us/people?f%5B0%5D=department_facet%3A230" class="nav__item__link">
+                Faculty
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/about-us/people?f%5B0%5D=department_facet%3A671" class="nav__item__link">
+                Associate Fellows
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/about-us/our-people/academic-visitors" class="nav__item__link">
+                Academic visitors
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/about-us/our-people/recruit-our-graduates" class="nav__item__link">
+                Recruit our graduates
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/about-us/our-people/work-us" class="nav__item__link">
+                Work for us
+              </a>
+                                                </li>
+        
+                  <li class="nav__item">
+            <button class="nav__item__text hide-submenu" data-js-hide-submenu>
+              <i aria-hidden="true" class="glyphicon glyphicon-menu-left" style="font-size:12px;"></i>
+              Back
+              <span class="visually-hidden">to About us menu</span>
+            </button>
+          </li>
+              </ul>
+      </div>    </div>
+    
+  
+                      </li>
+                            <li class="nav__item has-children">
+            
+                          <a href="https://sbs.ox.ac.uk/news" class="nav__item__link has-subnav">
+                News
+              </a>
+                              <button aria-expanded="false"
+                  class="nav-more show-subsubmenu"
+                  data-js-show-submenu
+                >
+                  <span class="visually-hidden">News submenu</span>
+                  <span class="glyphicon glyphicon-menu-right" style="font-size:12px;"></span>
+                </button>
+                                                                    
+          
+      <div class="nav__items nav__items--level-2 is-subnav">
+      <div aria-hidden="true" class="nav__title">
+                  News
+              </div>
+      <div class="sub-menu">      <ul>
+                                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/about-us/news/media-coverage" class="nav__item__link">
+                Media coverage
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/about-us/news/media-relations-contacts" class="nav__item__link">
+                Media relations contacts
+              </a>
+                                                </li>
+        
+                  <li class="nav__item">
+            <button class="nav__item__text hide-submenu" data-js-hide-submenu>
+              <i aria-hidden="true" class="glyphicon glyphicon-menu-left" style="font-size:12px;"></i>
+              Back
+              <span class="visually-hidden">to About us menu</span>
+            </button>
+          </li>
+              </ul>
+      </div>    </div>
+    
+  
+                      </li>
+                            <li class="nav__item has-children">
+            
+                          <a href="https://sbs.ox.ac.uk/about-us/venue-hire" class="nav__item__link has-subnav">
+                Venue hire
+              </a>
+                              <button aria-expanded="false"
+                  class="nav-more show-subsubmenu"
+                  data-js-show-submenu
+                >
+                  <span class="visually-hidden">Venue hire submenu</span>
+                  <span class="glyphicon glyphicon-menu-right" style="font-size:12px;"></span>
+                </button>
+                                                                    
+          
+      <div class="nav__items nav__items--level-2 is-subnav">
+      <div aria-hidden="true" class="nav__title">
+                  Venue hire
+              </div>
+      <div class="sub-menu">      <ul>
+                                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/about-us/venue-hire/park-end-street" class="nav__item__link">
+                Park End Street
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/about-us/venue-hire/egrove-park" class="nav__item__link">
+                Egrove Park
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/about-us/venue-hire/bb-accommodation" class="nav__item__link">
+                B&amp;B accommodation at Egrove Park
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/about-us/venue-hire/our-services" class="nav__item__link">
+                Our services
+              </a>
+                                                </li>
+        
+                  <li class="nav__item">
+            <button class="nav__item__text hide-submenu" data-js-hide-submenu>
+              <i aria-hidden="true" class="glyphicon glyphicon-menu-left" style="font-size:12px;"></i>
+              Back
+              <span class="visually-hidden">to About us menu</span>
+            </button>
+          </li>
+              </ul>
+      </div>    </div>
+    
+  
+                      </li>
+        
+                  <li class="nav__item">
+            <button class="nav__item__text hide-submenu" data-js-hide-submenu>
+              <i aria-hidden="true" class="glyphicon glyphicon-menu-left" style="font-size:12px;"></i>
+              Back
+              <span class="visually-hidden">to main menu</span>
+            </button>
+          </li>
+              </ul>
+      </div>    </div>
+    
+  
+                      </li>
+                            <li class="nav__item has-children">
+                                          <a aria-expanded="false"
+                  aria-label="Programmes submenu"
+                  class="nav__item__link has-subnav show-submenu"
+                  data-js-show-submenu
+                  href="https://sbs.ox.ac.uk/programmes"
+                  role="button"
+                >
+                  Programmes &nbsp;&nbsp;<span class="glyphicon glyphicon-menu-down" style="font-size:12px;"></span>
+                </a>
+                          
+                                                      
+          
+      <div class="nav__items nav__items--level-1 is-subnav">
+      <div aria-hidden="true" class="nav__title">
+                  Programmes
+              </div>
+      <div class="sub-menu">      <ul>
+                  <li class="hide-mobile">
+            <button
+              class="nav-control glyphicon glyphicon-remove"
+              data-js-hide-submenu
+              type="button"
+            >
+              <span class="visually-hidden">Close Programmes submenu</span>
+            </button>
+          </li>
+                                            <li class="nav__item has-children">
+            
+                          <a href="https://sbs.ox.ac.uk/programmes/mbas" class="nav__item__link has-subnav">
+                MBAs
+              </a>
+                              <button aria-expanded="false"
+                  class="nav-more show-subsubmenu"
+                  data-js-show-submenu
+                >
+                  <span class="visually-hidden">MBAs submenu</span>
+                  <span class="glyphicon glyphicon-menu-right" style="font-size:12px;"></span>
+                </button>
+                                                                    
+          
+      <div class="nav__items nav__items--level-2 is-subnav">
+      <div aria-hidden="true" class="nav__title">
+                  MBAs
+              </div>
+      <div class="sub-menu">      <ul>
+                                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/programmes/mbas/oxford-mba" class="nav__item__link">
+                MBA
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/programmes/mbas/oxford-11-mba" class="nav__item__link">
+                1+1 MBA
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/programmes/mbas/oxford-executive-mba" class="nav__item__link">
+                Executive MBA
+              </a>
+                                                </li>
+        
+                  <li class="nav__item">
+            <button class="nav__item__text hide-submenu" data-js-hide-submenu>
+              <i aria-hidden="true" class="glyphicon glyphicon-menu-left" style="font-size:12px;"></i>
+              Back
+              <span class="visually-hidden">to Programmes menu</span>
+            </button>
+          </li>
+              </ul>
+      </div>    </div>
+    
+  
+                      </li>
+                            <li class="nav__item has-children">
+            
+                          <a href="https://sbs.ox.ac.uk/programmes/degrees" class="nav__item__link has-subnav">
+                Degrees
+              </a>
+                              <button aria-expanded="false"
+                  class="nav-more show-subsubmenu"
+                  data-js-show-submenu
+                >
+                  <span class="visually-hidden">Degrees submenu</span>
+                  <span class="glyphicon glyphicon-menu-right" style="font-size:12px;"></span>
+                </button>
+                                                                    
+          
+      <div class="nav__items nav__items--level-2 is-subnav">
+      <div aria-hidden="true" class="nav__title">
+                  Degrees
+              </div>
+      <div class="sub-menu">      <ul>
+                                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/programmes/degrees/bahons-economics-and-management" class="nav__item__link">
+                BA Economics and Management
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/programmes/degrees/dphil-finance" class="nav__item__link">
+                DPhil in Finance
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/programmes/degrees/dphil-management" class="nav__item__link">
+                DPhil in Management
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/programmes/degrees/msc-financial-economics" class="nav__item__link">
+                MSc Financial Economics
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/programmes/degrees/msc-global-healthcare-leadership" class="nav__item__link">
+                MSc in Global Healthcare Leadership
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/programmes/degrees/msc-law-and-finance" class="nav__item__link">
+                MSc Law and Finance
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/programmes/degrees/msc-major-programme-management" class="nav__item__link">
+                MSc in Major Programme Management
+              </a>
+                                                </li>
+        
+                  <li class="nav__item">
+            <button class="nav__item__text hide-submenu" data-js-hide-submenu>
+              <i aria-hidden="true" class="glyphicon glyphicon-menu-left" style="font-size:12px;"></i>
+              Back
+              <span class="visually-hidden">to Programmes menu</span>
+            </button>
+          </li>
+              </ul>
+      </div>    </div>
+    
+  
+                      </li>
+                            <li class="nav__item has-children">
+            
+                          <a href="https://sbs.ox.ac.uk/programmes/executive-diplomas" class="nav__item__link has-subnav">
+                Executive Diplomas
+              </a>
+                              <button aria-expanded="false"
+                  class="nav-more show-subsubmenu"
+                  data-js-show-submenu
+                >
+                  <span class="visually-hidden">Executive Diplomas submenu</span>
+                  <span class="glyphicon glyphicon-menu-right" style="font-size:12px;"></span>
+                </button>
+                                                                    
+          
+      <div class="nav__items nav__items--level-2 is-subnav">
+      <div aria-hidden="true" class="nav__title">
+                  Executive Diplomas
+              </div>
+      <div class="sub-menu">      <ul>
+                                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/programmes/executive-diplomas/oxford-executive-diploma-ai-business" class="nav__item__link">
+                Artificial Intelligence for Business
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/programmes/executive-diplomas/oxford-executive-diploma-financial-strategy" class="nav__item__link">
+                Financial Strategy
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/programmes/executive-diplomas/oxford-executive-diploma-global-business" class="nav__item__link">
+                Global Business
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/programmes/executive-diplomas/oxford-executive-diploma-organisational-leadership" class="nav__item__link">
+                Organisational Leadership
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/programmes/executive-diplomas/oxford-executive-diploma-strategy-and-innovation" class="nav__item__link">
+                Strategy and Innovation
+              </a>
+                                                </li>
+        
+                  <li class="nav__item">
+            <button class="nav__item__text hide-submenu" data-js-hide-submenu>
+              <i aria-hidden="true" class="glyphicon glyphicon-menu-left" style="font-size:12px;"></i>
+              Back
+              <span class="visually-hidden">to Programmes menu</span>
+            </button>
+          </li>
+              </ul>
+      </div>    </div>
+    
+  
+                      </li>
+                            <li class="nav__item has-children">
+            
+                          <a href="https://sbs.ox.ac.uk/programmes/executive-education" class="nav__item__link has-subnav">
+                Executive Education
+              </a>
+                              <button aria-expanded="false"
+                  class="nav-more show-subsubmenu"
+                  data-js-show-submenu
+                >
+                  <span class="visually-hidden">Executive Education submenu</span>
+                  <span class="glyphicon glyphicon-menu-right" style="font-size:12px;"></span>
+                </button>
+                                                                    
+          
+      <div class="nav__items nav__items--level-2 is-subnav">
+      <div aria-hidden="true" class="nav__title">
+                  Executive Education
+              </div>
+      <div class="sub-menu">      <ul>
+                                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/programmes/executive-education/campus-open-programmes" class="nav__item__link">
+                On-campus open programmes
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/programmes/executive-education/online-programmes" class="nav__item__link">
+                Online programmes
+              </a>
+                                                </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/programmes/executive-education/custom-executive-education" class="nav__item__link">
+                ​Custom programmes
+              </a>
+                                                </li>
+        
+                  <li class="nav__item">
+            <button class="nav__item__text hide-submenu" data-js-hide-submenu>
+              <i aria-hidden="true" class="glyphicon glyphicon-menu-left" style="font-size:12px;"></i>
+              Back
+              <span class="visually-hidden">to Programmes menu</span>
+            </button>
+          </li>
+              </ul>
+      </div>    </div>
+    
+  
+                      </li>
+                            <li class="nav__item">
+            
+                          <a href="https://sbs.ox.ac.uk/programmes" class="nav__item__link">
+                Programme finder
+              </a>
+                                                </li>
+        
+                  <li class="nav__item">
+            <button class="nav__item__text hide-submenu" data-js-hide-submenu>
+              <i aria-hidden="true" class="glyphicon glyphicon-menu-left" style="font-size:12px;"></i>
+              Back
+              <span class="visually-hidden">to main menu</span>
+            </button>
+          </li>
+              </ul>
+      </div>    </div>
+    
+  
+                      </li>
+        
+              </ul>
+          </div>
+    
+  
+
+
+  </nav>
+
+  </div>
+
+          </div>
+            </div>
+          
+          <div class="hero hero--type-2 hero--with-intro overlay-light">
+    
+            <div class="field field--name-field-hp-header-image field--type-image field--label-hidden field--item"> <img src="%%=v(@heroImageURL)=%%" width="1800" height="1013" alt="%%=v(@heroImageDescr)=%%" loading="lazy" typeof="foaf:Image" class="img-responsive" />
+
+
+</div>
+      
+    
+            <div class="field field--name-field-hp-header-video field--type-entity-reference field--label-hidden field--item"><div>
+  
+  
+            <div class="field field--name-field-media-video-file field--type-file field--label-hidden field--item"><video autoplay="autoplay" loop="loop" muted="muted" width="640" height="480">
+      <source  src="%%=v(@heroVideoURL)=%%" type="video/%%=v(@heroVideoType)=%%" />
+  </video>
+</div>
+      
+</div>
+</div>
+      
+    <div class="hero__titles">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <h1 class="hero__title hero__title__local">%%=IIF(empty(@newsletter), 'Communications', 'Newsletters')=%%</h1><p class="hero__subtitle">Preference Centre</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+      
+  
+        
+  <div role="main"  class="main-container js-quickedit-main-content container page--overlaid" id="main">
+    <div class="row">
+            
+            
+                  <section class="col-sm-12">
+
+                                      <div class="highlighted">  <div class="region region-highlighted">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+</div>
+                  
+                
+                          <a id="main-content"></a>
+            <div class="region region-content">
+      <article role="article" about="https://sbs.ox.ac.uk/" class="homepage full clearfix">
+
+  
+  <div class="content">
+    
+    <script runat=server> Platform.Load("Core", "1.1"); try { </script> 
+%%[
+var @contentBlockId, @content, @retrieveStatus
+set @contentBlockId = IIF(empty(@newsletter), 248769, 249919)
+set @content = ContentBlockByID(@contentBlockId, "MainRegion", 0, "", @retrieveStatus)
+if @retrieveStatus == 0 then
+   Output(Concat(@content, ''))
+else
+   set @content = ContentBlockByID(248771, "MainRegion", 0, "The page you are trying to access cannot be displayed.<br />Please try again later.")
+   Output(Concat(@content, ''))
+endif
+]%%
+<script runat=server> } catch(e) {
+ Write(Platform.Function.ContentBlockByID("248771", "MainRegion", 0, "The page you are trying to access cannot be displayed.<br />Please try again later."));
+} </script>
+  
+  </div>
+
+</article>
+
+  </div>
+
+              </section>
+
+                </div>
+  </div>
+
+
+<footer class="footer footer--primary" role="contentinfo">
+  <section class="footer__section footer__section--secondary">
+    <div class="container">
+      <div class="row">
+          <div class="region region-footer" style="text-align: center !important;">
+    <nav role="navigation" aria-labelledby="block-said-footer-menu" id="block-said-footer" data-block-plugin-id="system_menu_block:footer">
+            
+  <h2 class="visually-hidden" id="block-said-footer-menu">Footer menu</h2>
+  
+
+        
+      <ul class="menu menu--footer nav">
+                      <li class="first">
+                                        <a href="https://sbs.ox.ac.uk/about-us/contact-us" data-drupal-link-system-path="node/6361">Contact us</a>
+              </li>
+                      <li>
+                                        <a href="https://sbs.ox.ac.uk/about-us/contact-us#find" data-drupal-link-system-path="node/6361">Find us</a>
+              </li>
+                      <li>
+                                        <a href="https://sbs.ox.ac.uk/about-us/news/media-relations-contacts" data-drupal-link-system-path="node/7696">Press</a>
+              </li>
+                      <li>
+                                        <a href="https://sbs.ox.ac.uk/about-us/our-people/work-us" data-drupal-link-system-path="node/6366">Jobs</a>
+              </li>
+                      <li>
+                                        <a href="https://sbs.ox.ac.uk/about-us/our-people/recruit-our-graduates" data-drupal-link-system-path="node/3226">Recruiters</a>
+              </li>
+                      <li>
+                                        <a href="https://sbs.ox.ac.uk/oxford-experience/alumni" data-drupal-link-system-path="node/3871">Alumni</a>
+              </li>
+                      <li>
+                                        <a href="https://sbs.ox.ac.uk/about-us/support-us" data-drupal-link-system-path="node/14011">Donate</a>
+              </li>
+                      <li class="last">
+                  <a href="https://sbs.ox.ac.uk/about-us/school/covid-19-information" data-drupal-link-system-path="node/14981">Covid-19</a>
+              </li>
+        </ul>
+  
+
+  </nav>
+
+  </div>
+
+      </div>
+    </div>
+  </section>
+    
+  
+    <div style="text-align:center !important; padding:50px 0 0 0; margin:0; "><center>
+      <a href="https://www.ecu.ac.uk/" class="footer-image-link" target="_blank"><img src="https://image.education.sbs.ox.ac.uk/lib/fe2a1172716404797c1178/m/1/af7bfeeb-ff10-4136-9797-b53a3dab3f95.png" class="footer-image-gc" /></a>
+      <a href="https://efmdglobal.org/accreditations/business-schools/equis" class="footer-image-link" target="_blank"><img src="https://image.education.sbs.ox.ac.uk/lib/fe2a1172716404797c1178/m/1/a51a69a3-78b5-4992-9a34-c49242aa8667.png" class="footer-image-ea" /></a>
+      <a href="https://globalnetwork.io/" class="footer-image-link" target="_blank"><img src="https://image.education.sbs.ox.ac.uk/lib/fe2a1172716404797c1178/m/1/ce473f58-7e6b-49d2-9570-cddabe094ea8.png" class="footer-image-gn" /></a></center>
+    </div>
+
+  
+  <div class="footer__small">
+    <p>
+              <a href="https://sbs.ox.ac.uk/about-us/website-policies">Website &amp; Privacy Policies</a>
+            <span>&copy; Sa&iuml;d Business School 2022</span>
+      <span>All rights reserved</span>
+    </p>
+  </div>
+</footer>
+
+  </div>
+
+      
+    </div>
+        <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/7421","currentPathIsAdmin":false,"isFront":true,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"dataLayer":{"defaultLang":"en","languages":{"en":{"id":"en","name":"English","direction":"ltr","weight":0}}},"eu_cookie_compliance":{"cookie_policy_version":"1.0.0","popup_enabled":true,"popup_agreed_enabled":false,"popup_hide_agreed":false,"popup_clicking_confirmation":false,"popup_scrolling_confirmation":false,"popup_html_info":"\u003Cdiv class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info\u0022\u003E\n  \u003Cdiv class =\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022\u003E\n      \u003Cp\u003ETo improve and personalise your visit we use first and third party marketing and analytical cookies. By using this site you agree to this. You can withdraw your consent at any time. For information on how to block or disable cookies, see our \u003Ca href=\u0022\/privacy-policy\u0022\u003Eprivacy policy\u003C\/a\u003E\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-agree-button\u0022\u003EI consent\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","use_mobile_message":false,"mobile_popup_html_info":"\u003Cdiv class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info\u0022\u003E\n  \u003Cdiv class =\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022\u003E\n      \n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-agree-button\u0022\u003EI consent\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","mobile_breakpoint":768,"popup_html_agreed":false,"popup_use_bare_css":false,"popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"\/privacy-policy","popup_link_new_window":true,"popup_position":false,"fixed_top_position":true,"popup_language":"en","store_consent":false,"better_support_for_screen_readers":false,"cookie_name":"","reload_page":false,"domain":"","domain_all_sites":false,"popup_eu_only_js":false,"cookie_lifetime":100,"cookie_session":0,"set_cookie_session_zero_on_disagree":null,"disagree_do_not_show_popup":false,"method":"default","automatic_cookies_removal":false,"allowed_cookies":"","withdraw_markup":"\u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-tab\u0022\u003EPrivacy settings\u003C\/button\u003E\n\u003Cdiv role=\u0022alertdialog\u0022 aria-labelledby=\u0022popup-text\u0022 class=\u0022eu-cookie-withdraw-banner\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022\u003E\n      \u003Cp\u003EWe use cookies on this site to enhance your user experience\u003C\/p\u003E\n\u003Cp\u003EYou have given your consent for us to set cookies.\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-button\u0022\u003EWithdraw consent\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","withdraw_enabled":false,"reload_options":null,"reload_routes_list":null,"withdraw_button_on_info_popup":false,"cookie_categories":[],"cookie_categories_details":[],"enable_save_preferences_button":true,"cookie_value_disagreed":"0","cookie_value_agreed_show_thank_you":"1","cookie_value_agreed":"2","containing_element":null,"settings_tab_enabled":null,"open_by_default":true},"bootstrap":{"forms_has_error_value_toggle":1,"modal_animation":1,"modal_backdrop":"true","modal_focus_input":1,"modal_keyboard":1,"modal_select_text":1,"modal_show":1,"modal_size":"","popover_enabled":1,"popover_animation":1,"popover_auto_close":1,"popover_container":"body","popover_content":"","popover_delay":"0","popover_html":0,"popover_placement":"right","popover_selector":"","popover_title":"","popover_trigger":"click","tooltip_enabled":1,"tooltip_animation":1,"tooltip_container":"body","tooltip_delay":"0","tooltip_html":0,"tooltip_placement":"auto left","tooltip_selector":"","tooltip_trigger":"hover"},"icon_select":{"icon_select_url":"https:\/\/sbs.ox.ac.uk\/sites\/default\/files\/icons\/icon_select_map.svg?hash=42910efbf00f385089fe0270c2cea016"},"ajax":[],"user":{"uid":0,"permissionsHash":"25f0754f52888952e231b11c923d391f061f72cf1d26f2029b7826290268530f"}}</script>
+<script src="https://sbs.ox.ac.uk/sites/default/files/js/js_NvimBhZNgu_VjRYX9gkQ4bnztYSFhG_YP8n64UflHME.js"></script>
+<script src="//player.vimeo.com/api/player.js"></script>
+<script src="//polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+<script src="https://sbs.ox.ac.uk/sites/default/files/js/js_fv3-Ho84TXlpBnS7l-jYWVXU1LLINM_Ysvar7BRS2_M.js"></script>
+<script src="https://sbs.ox.ac.uk/modules/contrib/eu_cookie_compliance/js/eu_cookie_compliance.js?v=1.19" defer></script>
+<script src="https://sbs.ox.ac.uk/sites/default/files/js/js_8Gv2XrmIFCiYTv-jOpG-7KeYEokOze9r3KiXnukECDk.js"></script>
+<script src="//www.youtube.com/iframe_api"></script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"c29e8be9ec","applicationID":"175055876","transactionName":"MlFTZEtZDRECV0VRXQsbcFNNUQwMTHBDTUIEWG1eVlwGPiBbX0xAClhdVUtkLQ0HUWdRVxJ3Xl5NSgwOD1FDFQwTXVRH","queueTime":0,"applicationTime":497,"atts":"HhZQEgNDHh8=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

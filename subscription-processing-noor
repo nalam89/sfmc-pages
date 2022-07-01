@@ -1,0 +1,38 @@
+%%[ var @errorMessage ]%%
+<script runat=server>
+  Platform.Load("Core", "1.1");
+  var err = "An error has occurred, please try again.";
+  Variable.SetValue("@errorMessage", err);
+  try {
+</script>%%[
+  set @s = RequestParameter("s")
+  set @f = RequestParameter("f")
+  set @action = RequestParameter("a")
+  set @newsletter = RequestParameter("n")
+  if not empty(@s) and not empty(@f) and not empty(@action) and (@action == 1 or @action == 0) then
+     set @subkey = Base64Decode(@s, "UTF-7")
+     set @field = Base64Decode(@f, "UTF-7")
+     if Length(@subkey) == 18 and Substring(@field, Subtract(Length(@field), 2), 3) == '__c' then
+        if Substring(@field, 1, 5) == 'Email' or Substring(@field, 1, 5) == 'Phone' then
+           set @action = Iif(@newsletter == 'yes', @action, Iif(@action == 1, "Yes", "No"))
+        else
+           set @action = Iif(@newsletter == 'yes', @action, Iif(@action == 1, 0, 1))
+        endif
+        set @validation = UpdateSingleSalesforceObject("Contact", @subkey, @field, @action)
+        if @validation != 1 then
+           Output(Concat(@errorMessage, ""))
+        else
+           set @warning = Iif(Substring(@field, 1, 5) == 'Email' and @action == 'No', "block", "none")
+           Output(Concat(@warning, ""))
+        endif
+     else
+        Output(Concat(@errorMessage, ""))
+     endif
+  else
+    Output(Concat(@errorMessage, ""))
+  endif
+]%%<script runat=server>
+  } catch(e) {
+          Write(err);
+    }
+</script>

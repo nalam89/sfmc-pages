@@ -1485,7 +1485,8 @@ QueryParam %%=v(@newsletter)=%%
     <script runat=server> Platform.Load("Core", "1.1"); try { </script> 
 %%[
 var @contentBlockId, @content, @retrieveStatus
-set @contentBlockId = IIF(empty(@newsletter), 248769, 249919)
+/*main-body-newsletter 249919*/
+set @contentBlockId = IIF(empty(@newsletter), 248769, 258661)
 set @content = ContentBlockByID(@contentBlockId, "MainRegion", 0, "", @retrieveStatus)
 if @retrieveStatus == 0 then
    Output(Concat(@content, ''))

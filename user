@@ -1,4 +1,4 @@
-v4
+v3
 <script runat="server">
 /*Code provided as is without warranty - make sure you understand what this code does before using it - use at your own risk*/
 Platform.Load("Core","1");

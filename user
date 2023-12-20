@@ -1,4 +1,4 @@
-v3
+v1
 <script runat="server">
 /*Code provided as is without warranty - make sure you understand what this code does before using it - use at your own risk*/
 Platform.Load("Core","1");
@@ -7,8 +7,8 @@ try {
   //================== https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/accountuser.html
   var cols = ["Name","CustomerKey","NotificationEmailAddress", "UserID", "ActiveFlag", "Email", "IsAPIUser", "AccountUserID", "LastSuccessfulLogin", "CreatedDate", "Roles"];
   //================= https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/ssjs_WSProxy_basic_retrieve.html
-  //var today = new Date();
-  //var prevDate = new Date();
+  var today = new Date();
+  var prevDate = new Date();
   //prevDate.setDate(today.getDate()-5);
   var filter = {
     LeftOperand: {Property: "Email",SimpleOperator: "like",Value: "@"},

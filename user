@@ -9,9 +9,9 @@ try {
   //================= https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/ssjs_WSProxy_basic_retrieve.html
   var today = new Date();
   var prevDate = new Date();
-  prevDate.setDate(today.getDate()-90);
+  prevDate.setDate(today.getDate()-30);
   var filter = {
-    LeftOperand: {Property: "LastSuccessfulLogin",SimpleOperator: "greaterThanOrEqual",Value: prevDate},
+    LeftOperand: {Property: "LastSuccessfulLogin",SimpleOperator: "lessThanOrEqual",Value: prevDate},
     LogicalOperator: "AND",
     RightOperand: {Property: "ActiveFlag",SimpleOperator: "equals",Value: "true"}
   };

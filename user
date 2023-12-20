@@ -1,0 +1,34 @@
+v4
+<script runat="server">
+/*Code provided as is without warranty - make sure you understand what this code does before using it - use at your own risk*/
+Platform.Load("Core","1");
+try {
+  var prox = new Script.Util.WSProxy();
+  //================== https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/accountuser.html
+  var cols = ["Name","CustomerKey","NotificationEmailAddress", "UserID", "ActiveFlag", "Email", "IsAPIUser", "AccountUserID", "LastSuccessfulLogin", "CreatedDate", "Roles"];
+  //================= https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/ssjs_WSProxy_basic_retrieve.html
+  var today = new Date();
+  var prevDate = new Date();
+  //prevDate.setDate(today.getDate()-5);
+  var filter = {
+    LeftOperand: {Property: "LastSuccessfulLogin",SimpleOperator: "greaterThanOrEqual",Value: prevDate},
+    LogicalOperator: "AND",
+    RightOperand: {Property: "ActiveFlag",SimpleOperator: "equals",Value: "true"}
+  };
+  var res = prox.retrieve("AccountUser", cols, filter);
+  //Write(Stringify(res.Results)+"<br><br><br>");
+
+    Write("<table border=1><tr><th>Name</th><th>Email</th><th>CreatedDate</th><th>LastSuccessfulLogin</th><th>Roles</th></tr>");
+    for (i = 0; i < res.Results.length; i++) {
+      Write("<tr><td>" + res.Results[i].Name + "</td><td>" + res.Results[i].Email + "</td><td>" + res.Results[i].CreatedDate + "</td><td>" + res.Results[i].LastSuccessfulLogin + "</td><td>");
+      for (r = 0; r < res.Results[i].Roles.length; r++) {
+        Write(res.Results[i].Roles[r].Name + "<br>");
+      }
+    Write("</td></tr>");
+    }
+  Write("</table>"); 
+  }
+catch(error) {
+  Write('Message: ' + error);
+}
+</script>

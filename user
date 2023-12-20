@@ -1,4 +1,4 @@
-v1
+v2
 <script runat="server">
 /*Code provided as is without warranty - make sure you understand what this code does before using it - use at your own risk*/
 Platform.Load("Core","1");
@@ -9,9 +9,9 @@ try {
   //================= https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/ssjs_WSProxy_basic_retrieve.html
   var today = new Date();
   var prevDate = new Date();
-  //prevDate.setDate(today.getDate()-5);
+  prevDate.setDate(today.getDate()-5);
   var filter = {
-    LeftOperand: {Property: "Email",SimpleOperator: "like",Value: "@"},
+    LeftOperand: {Property: "LastSuccessfulLogin",SimpleOperator: "greaterThanOrEqual",Value: prevDate},
     LogicalOperator: "AND",
     RightOperand: {Property: "ActiveFlag",SimpleOperator: "equals",Value: "true"}
   };

@@ -1,4 +1,4 @@
-v8
+v9
 <script runat="server">
 /*Code provided as is without warranty - make sure you understand what this code does before using it - use at your own risk*/
 Platform.Load("Core","1");
@@ -11,7 +11,8 @@ try {
   var prevDate = new Date();
   prevDate.setDate(today.getDate()-30);
   var filter = {
-    LeftOperand: {Property: "LastSuccessfulLogin",SimpleOperator: "greaterThanOrEqual",Value: "Mon, 16 Oct 2023 05:54:43 GMT-06:00"},
+LeftOperand: {Property: "Email",SimpleOperator: "equals",Value: "hanna_oeljeschlaeger@persistent.com"},
+//LeftOperand: {Property: "LastSuccessfulLogin",SimpleOperator: "greaterThanOrEqual",Value: "Mon, 16 Oct 2023 05:54:43 GMT-06:00"},
     LogicalOperator: "AND",
     RightOperand: {Property: "ActiveFlag",SimpleOperator: "equals",Value: "false"}
   };

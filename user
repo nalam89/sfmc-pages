@@ -1,4 +1,4 @@
-v7
+v8
 <script runat="server">
 /*Code provided as is without warranty - make sure you understand what this code does before using it - use at your own risk*/
 Platform.Load("Core","1");
@@ -11,9 +11,9 @@ try {
   var prevDate = new Date();
   prevDate.setDate(today.getDate()-30);
   var filter = {
-    LeftOperand: {Property: "LastSuccessfulLogin",SimpleOperator: "greaterThanOrEqual",Value: "2023-12-02"},
+    LeftOperand: {Property: "LastSuccessfulLogin",SimpleOperator: "greaterThanOrEqual",Value: "Mon, 16 Oct 2023 05:54:43 GMT-06:00"},
     LogicalOperator: "AND",
-    RightOperand: {Property: "ActiveFlag",SimpleOperator: "equals",Value: "true"}
+    RightOperand: {Property: "ActiveFlag",SimpleOperator: "equals",Value: "false"}
   };
   var res = prox.retrieve("AccountUser", cols, filter);
   //Write(Stringify(res.Results)+"<br><br><br>");

@@ -1,4 +1,4 @@
-v1
+v2
 <script runat="server">
 /*Code provided as is without warranty - make sure you understand what this code does before using it - use at your own risk*/
 Platform.Load("Core","1");
@@ -14,7 +14,7 @@ try {
 
   var filter = {
 //LeftOperand: {Property: "Email",SimpleOperator: "equals",Value: "hanna_oeljeschlaeger@persistent.com"},
-LeftOperand: {Property: "LastSuccessfulLogin",SimpleOperator: "greaterThanOrEqual",Value: "2023-08-27T00:00:00.000"},
+LeftOperand: {Property: "LastSuccessfulLogin",SimpleOperator: "greaterThanOrEqual",DateValue: "2023-08-27T00:00:00.000"},
     LogicalOperator: "AND",
     RightOperand: {Property: "ActiveFlag",SimpleOperator: "equals",Value: "false"}
   };
